@@ -1,0 +1,285 @@
+name: Cosmos
+description: >-
+  Cosmos is an interoperable blockchain ecosystem providing a modular framework
+  (Cosmos SDK) for building sovereign, high-performance application-specific
+  blockchains. The Cosmos SDK exposes LCD (Light Client Daemon) REST APIs on
+  port 1317, generated automatically via gRPC-gateway from Protobuf definitions.
+  These endpoints cover accounts, balances, transactions, governance proposals,
+  staking delegations, IBC transfers, minting, distribution, and ABCI app data.
+  The Cosmos Hub (cosmoshub-4) is the flagship chain; the same API surface is
+  shared by 150+ chains in the ecosystem.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/apis.yml
+version: "0.19"
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+tags:
+  - Blockchain
+  - Cosmos
+  - IBC
+  - Staking
+  - Governance
+  - DeFi
+  - Web3
+
+apis:
+
+  - name: Cosmos Auth API
+    description: >-
+      Query authentication-related data for accounts on a Cosmos SDK chain,
+      including account information, parameters, and address lookups.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/auth
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Auth
+      - Accounts
+      - Authentication
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/auth
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Bank API
+    description: >-
+      Query account balances, total coin supply, denomination metadata, and
+      denom ownership across a Cosmos SDK chain. Supports both individual
+      balance lookups and aggregate supply queries.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/bank
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Bank
+      - Balances
+      - Token Supply
+      - Denominations
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/bank
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Staking API
+    description: >-
+      Query proof-of-stake data including validators, delegations, unbonding
+      delegations, redelegations, staking parameters, and pool information.
+      Supports querying by delegator address, validator address, and more.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/staking
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Staking
+      - Validators
+      - Delegations
+      - Proof of Stake
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/staking
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Governance API
+    description: >-
+      Query on-chain governance data including proposals, votes, deposits, and
+      governance parameters. Supports filtering proposals by status and querying
+      individual voter and depositor records.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/gov
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Governance
+      - Proposals
+      - Voting
+      - Deposits
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/gov
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Distribution API
+    description: >-
+      Query staking reward distribution data including delegator rewards,
+      validator commission, community pool balances, and distribution parameters.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/distribution
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Distribution
+      - Rewards
+      - Commission
+      - Community Pool
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/distribution
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Mint API
+    description: >-
+      Query the minting module for inflation parameters, current inflation rate,
+      annual provisions, and minting module parameters for a Cosmos SDK chain.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/mint
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Mint
+      - Inflation
+      - Token Economics
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/mint
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Slashing API
+    description: >-
+      Query validator slashing data including signing information, slashing
+      parameters, and signing info for all validators. Used for monitoring
+      validator uptime and penalty state.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/modules/slashing
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Slashing
+      - Validators
+      - Signing Info
+      - Penalties
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/modules/slashing
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos IBC API
+    description: >-
+      Query Inter-Blockchain Communication (IBC) data including channels, clients,
+      connections, and packet commitments. Enables cross-chain transfer queries
+      and IBC state inspection across all 150+ chains in the Cosmos ecosystem.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://ibc.cosmos.network/v10/
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - IBC
+      - Inter-Blockchain Communication
+      - Channels
+      - Clients
+      - Connections
+    properties:
+      - type: Documentation
+        url: https://ibc.cosmos.network/v10/
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos Transactions API
+    description: >-
+      Query and broadcast transactions on a Cosmos SDK chain. Supports fetching
+      transaction details by hash, searching transactions by event filters,
+      simulating transaction gas, and broadcasting signed transactions.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest
+    baseURL: https://lcd.cosmos.network
+    tags:
+      - Transactions
+      - Broadcast
+      - Gas Simulation
+      - Transaction Search
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+  - name: Cosmos CometBFT RPC API
+    description: >-
+      Query CometBFT (formerly Tendermint) consensus engine data including block
+      information, validator sets, consensus state, network status, and ABCI
+      application data. Exposed on port 26657 independent of the Cosmos SDK LCD.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.cosmos.network/cometbft/latest/docs/README
+    baseURL: https://rpc.cosmos.network
+    tags:
+      - CometBFT
+      - Tendermint
+      - Consensus
+      - Blocks
+      - ABCI
+    properties:
+      - type: Documentation
+        url: https://docs.cosmos.network/cometbft/latest/docs/README
+      - type: OpenAPI
+        url: https://cosmos.github.io/cosmos-sdk/openapi.html
+    contact:
+      - FN: Cosmos Developer Support
+        url: https://discord.gg/interchain
+        email: ""
+
+common:
+  - type: GitHubOrganization
+    url: https://github.com/cosmos
+  - type: GitHubRepository
+    url: https://github.com/cosmos/cosmos-sdk
+  - type: Documentation
+    url: https://docs.cosmos.network
+  - type: OpenAPI
+    url: https://cosmos.github.io/cosmos-sdk/openapi.html
+  - type: SwaggerUI
+    url: https://localhost:1317/swagger
+  - type: Forum
+    url: https://forum.cosmos.network
+  - type: Discord
+    url: https://discord.gg/interchain
+  - type: Blog
+    url: https://blog.cosmos.network
+  - type: X
+    url: https://x.com/cosmosecosystem
+  - type: TermsOfService
+    url: https://cosmos.network/privacy
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/finops/finops.yml
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

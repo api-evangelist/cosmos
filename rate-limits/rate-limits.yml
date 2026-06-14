@@ -1,0 +1,53 @@
+name: Cosmos API Rate Limits
+description: >-
+  The Cosmos SDK itself imposes no built-in rate limits on the LCD REST API
+  server. Rate limiting is entirely dependent on deployment: self-hosted nodes
+  have no limits by default; community public endpoints apply informal or
+  infrastructure-level throttling; third-party commercial providers impose
+  plan-based rate limits. The CometBFT RPC server supports a max_open_connections
+  setting (default: 900) but no per-IP rate limiting out of the box.
+url: https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest
+created: "2026-06-13"
+modified: "2026-06-13"
+
+rateLimits:
+
+  - plan: Self-Hosted
+    description: >-
+      No rate limits enforced by the Cosmos SDK LCD server. Operators may add
+      reverse-proxy-level rate limiting (e.g., nginx, Caddy) independently.
+    requestsPerSecond: unlimited
+    requestsPerMinute: unlimited
+    requestsPerDay: unlimited
+    burstLimit: unlimited
+    concurrentConnections: unlimited
+    notes: >-
+      max_open_connections in config.toml applies to CometBFT RPC (default 900),
+      not the LCD REST server.
+
+  - plan: Community Public Endpoints
+    description: >-
+      Community-run public nodes may apply ad-hoc IP-based throttling. No
+      documented limits exist; treat as best-effort with implicit low thresholds.
+    requestsPerSecond: unknown
+    requestsPerMinute: unknown
+    requestsPerDay: unknown
+    burstLimit: unknown
+    concurrentConnections: unknown
+    notes: >-
+      Not intended for production use. Abusive usage may result in IP bans.
+
+  - plan: Third-Party Node Provider (QuickNode Example)
+    description: >-
+      Third-party node providers impose tiered rate limits based on subscription
+      plan. QuickNode, for example, measures usage in credits and enforces
+      per-second and per-month request caps.
+    requestsPerSecond: varies
+    requestsPerMinute: varies
+    requestsPerDay: varies
+    burstLimit: varies
+    concurrentConnections: varies
+    notes: >-
+      Consult your specific provider's plan documentation. Examples include
+      QuickNode (https://www.quicknode.com/pricing), Blockdaemon, All That Node,
+      and Cosmostation.

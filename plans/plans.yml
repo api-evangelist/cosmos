@@ -1,0 +1,62 @@
+name: Cosmos API Plans
+description: >-
+  The Cosmos SDK LCD (Light Client Daemon) REST APIs are open-source and
+  self-hosted. There is no centralized paid plan from the Cosmos project itself.
+  Access to public nodes is community-provided and free; production usage
+  requires running your own node or subscribing to a third-party node provider
+  such as QuickNode, Blockdaemon, or All That Node.
+url: https://cosmos.network
+created: "2026-06-13"
+modified: "2026-06-13"
+
+plans:
+
+  - name: Self-Hosted (Open Source)
+    description: >-
+      Run your own Cosmos SDK node and enable the REST API server by setting
+      api.enable = true in app.toml. Full access to all LCD REST endpoints on
+      port 1317 with no usage restrictions beyond your own hardware.
+    url: https://docs.cosmos.network/sdk/latest/user/run-node/run-node
+    type: free
+    rateLimited: false
+    authentication: none
+    features:
+      - Full LCD REST API access (port 1317)
+      - Swagger/OpenAPI UI at /swagger
+      - gRPC access (port 9090)
+      - CometBFT RPC (port 26657)
+      - No rate limits (self-imposed)
+      - Archive data (if run as archive node)
+
+  - name: Community Public Endpoints (Free)
+    description: >-
+      Community-operated public LCD endpoints are available for development and
+      testing. These are not intended for production dApp usage and may have
+      implicit rate limiting or availability constraints.
+    url: https://github.com/cosmos/awesome-cosmos
+    type: free
+    rateLimited: true
+    authentication: none
+    features:
+      - LCD REST API access
+      - CometBFT RPC access
+      - Best-effort availability
+      - No SLA
+
+  - name: Third-Party Node Provider (Paid)
+    description: >-
+      Commercial node providers such as QuickNode, Blockdaemon, All That Node,
+      and Cosmostation offer managed Cosmos Hub API access with SLAs, dedicated
+      endpoints, and higher rate limits.
+    url: https://www.quicknode.com/docs/cosmos
+    type: paid
+    rateLimited: true
+    authentication: apiKey
+    features:
+      - Dedicated LCD REST endpoints
+      - CometBFT RPC access
+      - API key authentication
+      - SLA-backed uptime
+      - Higher rate limits
+      - Archive node access
+      - Customer support

@@ -1,0 +1,60 @@
+name: Cosmos API FinOps
+description: >-
+  Cost management guidance for consuming Cosmos SDK LCD REST APIs. Since the
+  Cosmos SDK is open-source and self-hosted, the primary costs are
+  infrastructure (node hardware, cloud compute, storage) rather than per-call
+  API fees. Third-party commercial node providers offer metered pricing as an
+  alternative to self-hosting.
+url: https://cosmos.network
+created: "2026-06-13"
+modified: "2026-06-13"
+
+costModel: infrastructure-based
+
+costFactors:
+
+  - factor: Self-Hosted Node Infrastructure
+    description: >-
+      Running a full Cosmos Hub node requires significant compute, storage, and
+      bandwidth. A pruned full node needs roughly 500 GB+ of disk space; an
+      archive node requires multiple terabytes. Cloud costs vary by provider.
+    estimatedMonthlyCost: "$50–$500+ USD depending on cloud provider and node type"
+    notes: >-
+      Archive nodes suitable for deep history queries cost significantly more.
+      Pruning strategies (default, everything, nothing, custom) affect storage
+      cost. See app.toml pruning settings.
+
+  - factor: Third-Party Node Provider Subscription
+    description: >-
+      Commercial providers charge based on request volume (credits/requests per
+      month) or a flat monthly fee for dedicated endpoints. Suitable for teams
+      that do not want to manage node infrastructure.
+    estimatedMonthlyCost: "$0–$2,000+ USD depending on plan and usage"
+    providers:
+      - name: QuickNode
+        url: https://www.quicknode.com/pricing
+        notes: Credit-based pricing; free tier available
+      - name: Blockdaemon
+        url: https://blockdaemon.com/pricing
+        notes: Enterprise-focused; contact for pricing
+      - name: All That Node
+        url: https://docs.allthatnode.com
+        notes: Pay-as-you-go and monthly plans
+      - name: Cosmostation (Mintscan LCD Proxy)
+        url: https://docs.cosmostation.io/apis/reference/proxy/lcd
+        notes: Bearer token authentication; usage-based
+
+  - factor: Bandwidth and Egress
+    description: >-
+      High-volume query workloads (historical queries, indexing) generate
+      significant outbound bandwidth, especially from archive nodes. Cloud egress
+      fees should be factored into total cost of ownership.
+    estimatedMonthlyCost: "Variable — $0.08–$0.12/GB egress on major cloud providers"
+
+recommendations:
+  - Use pruned nodes for current-state queries to minimize storage costs.
+  - Use archive nodes only when deep historical data is required.
+  - For development and testing, use community public endpoints to avoid costs.
+  - For production, self-host if query volume is high; use third-party providers
+    for lower-volume or managed deployments.
+  - Monitor node disk growth; Cosmos Hub state grows ~1–2 GB per day at peak.
