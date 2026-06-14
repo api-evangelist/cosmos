@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.abci.ValidatorUpdate Schemas",
+  "description": "JSON Schema definitions for the tendermint.abci.ValidatorUpdate module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.abci.ValidatorUpdate": {
+      "type": "object",
+      "properties": {
+        "pubKey": {
+          "type": "object",
+          "properties": {
+            "ed25519": {
+              "type": "string",
+              "format": "byte"
+            },
+            "secp256k1": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "title": "PublicKey defines the keys available for use with Validators"
+        },
+        "power": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.abci.EventAttribute Schemas",
+  "description": "JSON Schema definitions for the tendermint.abci.EventAttribute module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.abci.EventAttribute": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "index": {
+          "type": "boolean",
+          "title": "nondeterministic"
+        }
+      },
+      "description": "EventAttribute is a single key-value pair, associated with an event."
+    }
+  }
+}

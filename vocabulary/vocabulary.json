@@ -1,0 +1,630 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cosmos SDK API Vocabulary",
+  "description": "Controlled vocabulary of tags and field names used across the Cosmos SDK gRPC-gateway REST API.",
+  "tags": {
+    "Query": {
+      "type": "tag",
+      "usedIn": [
+        "GET /cosmos/auth/v1beta1/account_info/{address}",
+        "GET /cosmos/auth/v1beta1/accounts",
+        "GET /cosmos/auth/v1beta1/accounts/{address}",
+        "GET /cosmos/auth/v1beta1/address_by_id/{accountId}",
+        "GET /cosmos/auth/v1beta1/bech32",
+        "GET /cosmos/auth/v1beta1/bech32/{addressBytes}",
+        "GET /cosmos/auth/v1beta1/bech32/{addressString}",
+        "GET /cosmos/auth/v1beta1/module_accounts",
+        "GET /cosmos/auth/v1beta1/module_accounts/{name}",
+        "GET /cosmos/auth/v1beta1/params",
+        "GET /cosmos/authz/v1beta1/grants",
+        "GET /cosmos/authz/v1beta1/grants/grantee/{grantee}",
+        "GET /cosmos/authz/v1beta1/grants/granter/{granter}",
+        "GET /cosmos/bank/v1beta1/balances/{address}",
+        "GET /cosmos/bank/v1beta1/balances/{address}/by_denom",
+        "GET /cosmos/bank/v1beta1/denom_owners/{denom}",
+        "GET /cosmos/bank/v1beta1/denom_owners_by_query",
+        "GET /cosmos/bank/v1beta1/denoms_metadata",
+        "GET /cosmos/bank/v1beta1/denoms_metadata/{denom}",
+        "GET /cosmos/bank/v1beta1/denoms_metadata_by_query_string",
+        "GET /cosmos/bank/v1beta1/params",
+        "GET /cosmos/bank/v1beta1/send_enabled",
+        "GET /cosmos/bank/v1beta1/spendable_balances/{address}",
+        "GET /cosmos/bank/v1beta1/spendable_balances/{address}/by_denom",
+        "GET /cosmos/bank/v1beta1/supply",
+        "GET /cosmos/bank/v1beta1/supply/by_denom",
+        "GET /cosmos/consensus/v1/params",
+        "GET /cosmos/distribution/v1beta1/community_pool",
+        "GET /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/rewards",
+        "GET /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/rewards/{validatorAddress}",
+        "GET /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/starting_info/{validatorAddress}",
+        "GET /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/validators",
+        "GET /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/withdraw_address",
+        "GET /cosmos/distribution/v1beta1/params",
+        "GET /cosmos/distribution/v1beta1/validators/{validatorAddress}",
+        "GET /cosmos/distribution/v1beta1/validators/{validatorAddress}/commission",
+        "GET /cosmos/distribution/v1beta1/validators/{validatorAddress}/current_rewards",
+        "GET /cosmos/distribution/v1beta1/validators/{validatorAddress}/historical_rewards/{period}",
+        "GET /cosmos/distribution/v1beta1/validators/{validatorAddress}/outstanding_rewards",
+        "GET /cosmos/distribution/v1beta1/validators/{validatorAddress}/slashes",
+        "GET /cosmos/epochs/v1beta1/current_epoch",
+        "GET /cosmos/epochs/v1beta1/epochs",
+        "GET /cosmos/evidence/v1beta1/evidence",
+        "GET /cosmos/evidence/v1beta1/evidence/{hash}",
+        "GET /cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}",
+        "GET /cosmos/feegrant/v1beta1/allowances/{grantee}",
+        "GET /cosmos/feegrant/v1beta1/issued/{granter}",
+        "GET /cosmos/gov/v1/constitution",
+        "GET /cosmos/gov/v1/params/{paramsType}",
+        "GET /cosmos/gov/v1/proposals",
+        "GET /cosmos/gov/v1/proposals/{proposalId}",
+        "GET /cosmos/gov/v1/proposals/{proposalId}/deposits",
+        "GET /cosmos/gov/v1/proposals/{proposalId}/deposits/{depositor}",
+        "GET /cosmos/gov/v1/proposals/{proposalId}/tally",
+        "GET /cosmos/gov/v1/proposals/{proposalId}/votes",
+        "GET /cosmos/gov/v1/proposals/{proposalId}/votes/{voter}",
+        "GET /cosmos/gov/v1beta1/params/{paramsType}",
+        "GET /cosmos/gov/v1beta1/proposals",
+        "GET /cosmos/gov/v1beta1/proposals/{proposalId}",
+        "GET /cosmos/gov/v1beta1/proposals/{proposalId}/deposits",
+        "GET /cosmos/gov/v1beta1/proposals/{proposalId}/deposits/{depositor}",
+        "GET /cosmos/gov/v1beta1/proposals/{proposalId}/tally",
+        "GET /cosmos/gov/v1beta1/proposals/{proposalId}/votes",
+        "GET /cosmos/gov/v1beta1/proposals/{proposalId}/votes/{voter}",
+        "GET /cosmos/mint/v1beta1/annual_provisions",
+        "GET /cosmos/mint/v1beta1/inflation",
+        "GET /cosmos/mint/v1beta1/params",
+        "GET /cosmos/slashing/v1beta1/params",
+        "GET /cosmos/slashing/v1beta1/signing_infos",
+        "GET /cosmos/slashing/v1beta1/signing_infos/{consAddress}",
+        "GET /cosmos/staking/v1beta1/delegations/{delegatorAddr}",
+        "GET /cosmos/staking/v1beta1/delegators/{delegatorAddr}/redelegations",
+        "GET /cosmos/staking/v1beta1/delegators/{delegatorAddr}/unbonding_delegations",
+        "GET /cosmos/staking/v1beta1/delegators/{delegatorAddr}/validators",
+        "GET /cosmos/staking/v1beta1/delegators/{delegatorAddr}/validators/{validatorAddr}",
+        "GET /cosmos/staking/v1beta1/historical_info/{height}",
+        "GET /cosmos/staking/v1beta1/params",
+        "GET /cosmos/staking/v1beta1/pool",
+        "GET /cosmos/staking/v1beta1/validators",
+        "GET /cosmos/staking/v1beta1/validators/{validatorAddr}",
+        "GET /cosmos/staking/v1beta1/validators/{validatorAddr}/delegations",
+        "GET /cosmos/staking/v1beta1/validators/{validatorAddr}/delegations/{delegatorAddr}",
+        "GET /cosmos/staking/v1beta1/validators/{validatorAddr}/delegations/{delegatorAddr}/unbonding_delegation",
+        "GET /cosmos/staking/v1beta1/validators/{validatorAddr}/unbonding_delegations",
+        "GET /cosmos/upgrade/v1beta1/applied_plan/{name}",
+        "GET /cosmos/upgrade/v1beta1/authority",
+        "GET /cosmos/upgrade/v1beta1/current_plan",
+        "GET /cosmos/upgrade/v1beta1/module_versions",
+        "GET /cosmos/upgrade/v1beta1/upgraded_consensus_state/{lastHeight}"
+      ],
+      "description": "API tag: Query"
+    },
+    "Service": {
+      "type": "tag",
+      "usedIn": [
+        "GET /cosmos/base/node/v1beta1/config",
+        "GET /cosmos/base/node/v1beta1/status",
+        "GET /cosmos/base/tendermint/v1beta1/abci_query",
+        "GET /cosmos/base/tendermint/v1beta1/block_results/latest",
+        "GET /cosmos/base/tendermint/v1beta1/block_results/{height}",
+        "GET /cosmos/base/tendermint/v1beta1/blocks/latest",
+        "GET /cosmos/base/tendermint/v1beta1/blocks/{height}",
+        "GET /cosmos/base/tendermint/v1beta1/node_info",
+        "GET /cosmos/base/tendermint/v1beta1/syncing",
+        "GET /cosmos/base/tendermint/v1beta1/validatorsets/latest",
+        "GET /cosmos/base/tendermint/v1beta1/validatorsets/{height}",
+        "POST /cosmos/tx/v1beta1/decode",
+        "POST /cosmos/tx/v1beta1/decode/amino",
+        "POST /cosmos/tx/v1beta1/encode",
+        "POST /cosmos/tx/v1beta1/encode/amino",
+        "POST /cosmos/tx/v1beta1/simulate",
+        "GET /cosmos/tx/v1beta1/txs",
+        "POST /cosmos/tx/v1beta1/txs",
+        "GET /cosmos/tx/v1beta1/txs/block/{height}",
+        "GET /cosmos/tx/v1beta1/txs/{hash}"
+      ],
+      "description": "API tag: Service"
+    }
+  },
+  "fields": {
+    "pagination": {
+      "type": "field",
+      "occurrences": 33,
+      "description": "Field 'pagination' appearing in 33 schema definition(s)."
+    },
+    "height": {
+      "type": "field",
+      "occurrences": 12,
+      "description": "Field 'height' appearing in 12 schema definition(s)."
+    },
+    "params": {
+      "type": "field",
+      "occurrences": 8,
+      "description": "Field 'params' appearing in 8 schema definition(s)."
+    },
+    "amount": {
+      "type": "field",
+      "occurrences": 7,
+      "description": "Field 'amount' appearing in 7 schema definition(s)."
+    },
+    "version": {
+      "type": "field",
+      "occurrences": 7,
+      "description": "Field 'version' appearing in 7 schema definition(s)."
+    },
+    "rewards": {
+      "type": "field",
+      "occurrences": 7,
+      "description": "Field 'rewards' appearing in 7 schema definition(s)."
+    },
+    "address": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'address' appearing in 6 schema definition(s)."
+    },
+    "info": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'info' appearing in 6 schema definition(s)."
+    },
+    "balance": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'balance' appearing in 6 schema definition(s)."
+    },
+    "timestamp": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'timestamp' appearing in 6 schema definition(s)."
+    },
+    "data": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'data' appearing in 6 schema definition(s)."
+    },
+    "evidence": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'evidence' appearing in 6 schema definition(s)."
+    },
+    "block": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'block' appearing in 6 schema definition(s)."
+    },
+    "validators": {
+      "type": "field",
+      "occurrences": 6,
+      "description": "Field 'validators' appearing in 6 schema definition(s)."
+    },
+    "key": {
+      "type": "field",
+      "occurrences": 5,
+      "description": "Field 'key' appearing in 5 schema definition(s)."
+    },
+    "appHash": {
+      "type": "field",
+      "occurrences": 5,
+      "description": "Field 'appHash' appearing in 5 schema definition(s)."
+    },
+    "blockId": {
+      "type": "field",
+      "occurrences": 5,
+      "description": "Field 'blockId' appearing in 5 schema definition(s)."
+    },
+    "validatorAddress": {
+      "type": "field",
+      "occurrences": 5,
+      "description": "Field 'validatorAddress' appearing in 5 schema definition(s)."
+    },
+    "proposalId": {
+      "type": "field",
+      "occurrences": 5,
+      "description": "Field 'proposalId' appearing in 5 schema definition(s)."
+    },
+    "tx": {
+      "type": "field",
+      "occurrences": 5,
+      "description": "Field 'tx' appearing in 5 schema definition(s)."
+    },
+    "code": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'code' appearing in 4 schema definition(s)."
+    },
+    "pubKey": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'pubKey' appearing in 4 schema definition(s)."
+    },
+    "total": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'total' appearing in 4 schema definition(s)."
+    },
+    "denom": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'denom' appearing in 4 schema definition(s)."
+    },
+    "name": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'name' appearing in 4 schema definition(s)."
+    },
+    "metadata": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'metadata' appearing in 4 schema definition(s)."
+    },
+    "log": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'log' appearing in 4 schema definition(s)."
+    },
+    "header": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'header' appearing in 4 schema definition(s)."
+    },
+    "type": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'type' appearing in 4 schema definition(s)."
+    },
+    "events": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'events' appearing in 4 schema definition(s)."
+    },
+    "commission": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'commission' appearing in 4 schema definition(s)."
+    },
+    "txBytes": {
+      "type": "field",
+      "occurrences": 4,
+      "description": "Field 'txBytes' appearing in 4 schema definition(s)."
+    },
+    "granter": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'granter' appearing in 3 schema definition(s)."
+    },
+    "grants": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'grants' appearing in 3 schema definition(s)."
+    },
+    "value": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'value' appearing in 3 schema definition(s)."
+    },
+    "codespace": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'codespace' appearing in 3 schema definition(s)."
+    },
+    "time": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'time' appearing in 3 schema definition(s)."
+    },
+    "app": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'app' appearing in 3 schema definition(s)."
+    },
+    "validator": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'validator' appearing in 3 schema definition(s)."
+    },
+    "txs": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'txs' appearing in 3 schema definition(s)."
+    },
+    "totalVotingPower": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'totalVotingPower' appearing in 3 schema definition(s)."
+    },
+    "minDeposit": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'minDeposit' appearing in 3 schema definition(s)."
+    },
+    "maxDepositPeriod": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'maxDepositPeriod' appearing in 3 schema definition(s)."
+    },
+    "votingPeriod": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'votingPeriod' appearing in 3 schema definition(s)."
+    },
+    "quorum": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'quorum' appearing in 3 schema definition(s)."
+    },
+    "threshold": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'threshold' appearing in 3 schema definition(s)."
+    },
+    "vetoThreshold": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'vetoThreshold' appearing in 3 schema definition(s)."
+    },
+    "status": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'status' appearing in 3 schema definition(s)."
+    },
+    "option": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'option' appearing in 3 schema definition(s)."
+    },
+    "delegatorAddress": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'delegatorAddress' appearing in 3 schema definition(s)."
+    },
+    "entries": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'entries' appearing in 3 schema definition(s)."
+    },
+    "unbondingOnHoldRefCount": {
+      "type": "field",
+      "occurrences": 3,
+      "description": "Field 'unbondingOnHoldRefCount' appearing in 3 schema definition(s)."
+    },
+    "details": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'details' appearing in 2 schema definition(s)."
+    },
+    "sequence": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'sequence' appearing in 2 schema definition(s)."
+    },
+    "account": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'account' appearing in 2 schema definition(s)."
+    },
+    "accounts": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'accounts' appearing in 2 schema definition(s)."
+    },
+    "authorization": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'authorization' appearing in 2 schema definition(s)."
+    },
+    "expiration": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'expiration' appearing in 2 schema definition(s)."
+    },
+    "grantee": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'grantee' appearing in 2 schema definition(s)."
+    },
+    "description": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'description' appearing in 2 schema definition(s)."
+    },
+    "sendEnabled": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'sendEnabled' appearing in 2 schema definition(s)."
+    },
+    "balances": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'balances' appearing in 2 schema definition(s)."
+    },
+    "denomOwners": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'denomOwners' appearing in 2 schema definition(s)."
+    },
+    "index": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'index' appearing in 2 schema definition(s)."
+    },
+    "lastCommit": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'lastCommit' appearing in 2 schema definition(s)."
+    },
+    "sdkBlock": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'sdkBlock' appearing in 2 schema definition(s)."
+    },
+    "txsResults": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'txsResults' appearing in 2 schema definition(s)."
+    },
+    "finalizeBlockEvents": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'finalizeBlockEvents' appearing in 2 schema definition(s)."
+    },
+    "validatorUpdates": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'validatorUpdates' appearing in 2 schema definition(s)."
+    },
+    "consensusParamUpdates": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'consensusParamUpdates' appearing in 2 schema definition(s)."
+    },
+    "blockHeight": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'blockHeight' appearing in 2 schema definition(s)."
+    },
+    "chainId": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'chainId' appearing in 2 schema definition(s)."
+    },
+    "lastBlockId": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'lastBlockId' appearing in 2 schema definition(s)."
+    },
+    "lastCommitHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'lastCommitHash' appearing in 2 schema definition(s)."
+    },
+    "dataHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'dataHash' appearing in 2 schema definition(s)."
+    },
+    "validatorsHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'validatorsHash' appearing in 2 schema definition(s)."
+    },
+    "nextValidatorsHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'nextValidatorsHash' appearing in 2 schema definition(s)."
+    },
+    "consensusHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'consensusHash' appearing in 2 schema definition(s)."
+    },
+    "lastResultsHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'lastResultsHash' appearing in 2 schema definition(s)."
+    },
+    "evidenceHash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'evidenceHash' appearing in 2 schema definition(s)."
+    },
+    "proposerAddress": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'proposerAddress' appearing in 2 schema definition(s)."
+    },
+    "votingPower": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'votingPower' appearing in 2 schema definition(s)."
+    },
+    "proposerPriority": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'proposerPriority' appearing in 2 schema definition(s)."
+    },
+    "attributes": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'attributes' appearing in 2 schema definition(s)."
+    },
+    "moniker": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'moniker' appearing in 2 schema definition(s)."
+    },
+    "authority": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'authority' appearing in 2 schema definition(s)."
+    },
+    "hash": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'hash' appearing in 2 schema definition(s)."
+    },
+    "maxBytes": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'maxBytes' appearing in 2 schema definition(s)."
+    },
+    "round": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'round' appearing in 2 schema definition(s)."
+    },
+    "signatures": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'signatures' appearing in 2 schema definition(s)."
+    },
+    "signature": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'signature' appearing in 2 schema definition(s)."
+    },
+    "proposer": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'proposer' appearing in 2 schema definition(s)."
+    },
+    "pool": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'pool' appearing in 2 schema definition(s)."
+    },
+    "operatorAddress": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'operatorAddress' appearing in 2 schema definition(s)."
+    },
+    "currentEpoch": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'currentEpoch' appearing in 2 schema definition(s)."
+    },
+    "allowance": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'allowance' appearing in 2 schema definition(s)."
+    },
+    "allowances": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'allowances' appearing in 2 schema definition(s)."
+    },
+    "depositor": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'depositor' appearing in 2 schema definition(s)."
+    },
+    "messages": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'messages' appearing in 2 schema definition(s)."
+    },
+    "finalTallyResult": {
+      "type": "field",
+      "occurrences": 2,
+      "description": "Field 'finalTallyResult' appearing in 2 schema definition(s)."
+    }
+  }
+}

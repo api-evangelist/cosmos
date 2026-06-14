@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.version.Consensus Schemas",
+  "description": "JSON Schema definitions for the tendermint.version.Consensus module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.version.Consensus": {
+      "type": "object",
+      "properties": {
+        "block": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "app": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "description": "Consensus captures the consensus rules for processing a block in the blockchain,\nincluding all blockchain data structures and the rules of the application's\nstate transition machine."
+    }
+  }
+}

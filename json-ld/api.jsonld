@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/json-ld/context.jsonld",
+  "@type": "schema:WebAPI",
+  "name": "Cosmos SDK gRPC-Gateway REST API",
+  "description": "A REST interface for state queries.",
+  "url": "https://docs.cosmos.network",
+  "baseURL": "https://lcd.cosmos.network",
+  "schema:version": "1.0.0",
+  "schema:license": {
+    "@type": "schema:CreativeWork",
+    "name": "Apache-2.0"
+  },
+  "schema:provider": {
+    "@type": "schema:Organization",
+    "name": "Cosmos",
+    "url": "https://cosmos.network"
+  },
+  "cosmos:modules": [
+    "upgrade",
+    "evidence",
+    "gov",
+    "mint",
+    "auth",
+    "distribution",
+    "slashing",
+    "epochs",
+    "staking",
+    "consensus",
+    "bank",
+    "authz",
+    "feegrant",
+    "tx",
+    "base"
+  ],
+  "cosmos:operationCount": 109,
+  "cosmos:definitionCount": 242
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK cosmos.crypto.multisig Schemas",
+  "description": "JSON Schema definitions for the cosmos.crypto.multisig module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "cosmos.crypto.multisig.v1beta1.CompactBitArray": {
+      "type": "object",
+      "properties": {
+        "extraBitsStored": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "elems": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "description": "CompactBitArray is an implementation of a space efficient bit array.\nThis is used to ensure that the encoded data takes up a minimal amount of\nspace after proto encoding.\nThis is not thread safe, and is not intended for concurrent usage."
+    }
+  }
+}

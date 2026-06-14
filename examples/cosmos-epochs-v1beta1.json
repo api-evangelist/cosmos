@@ -1,0 +1,38 @@
+{
+  "group": "cosmos/epochs/v1beta1",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cosmos/epochs/v1beta1/current_epoch",
+      "operationId": "CurrentEpoch",
+      "summary": "CurrentEpoch provide current epoch of specified identifier",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "identifier",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/epochs/v1beta1/epochs",
+      "operationId": "EpochInfos",
+      "summary": "EpochInfos provide running epochInfos",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

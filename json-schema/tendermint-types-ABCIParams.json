@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.ABCIParams Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.ABCIParams module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.ABCIParams": {
+      "type": "object",
+      "properties": {
+        "voteExtensionsEnableHeight": {
+          "type": "string",
+          "format": "int64",
+          "description": "vote_extensions_enable_height configures the first height during which\nvote extensions will be enabled. During this specified height, and for all\nsubsequent heights, precommit messages that do not contain valid extension data\nwill be considered invalid. Prior to this height, vote extensions will not\nbe used or accepted by validators on the network.\n\nOnce enabled, vote extensions will be created by the application in ExtendVote,\npassed to the application for validation in VerifyVoteExtension and given\nto the application to use when proposing a block during PrepareProposal."
+        }
+      },
+      "description": "ABCIParams configure functionality specific to the Application Blockchain Interface."
+    }
+  }
+}

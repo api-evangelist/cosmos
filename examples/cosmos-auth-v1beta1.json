@@ -1,0 +1,217 @@
+{
+  "group": "cosmos/auth/v1beta1",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/account_info/{address}",
+      "operationId": "AccountInfo",
+      "summary": "AccountInfo queries account info which is common to all account types.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "address",
+          "in": "path",
+          "required": true,
+          "description": "address is the account address string.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/accounts",
+      "operationId": "Accounts",
+      "summary": "Accounts returns all the existing accounts.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "pagination.key",
+          "in": "query",
+          "required": false,
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.offset",
+          "in": "query",
+          "required": false,
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.countTotal",
+          "in": "query",
+          "required": false,
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+          "type": "boolean"
+        },
+        {
+          "name": "pagination.reverse",
+          "in": "query",
+          "required": false,
+          "description": "reverse is set to true if results are to be returned in the descending order.",
+          "type": "boolean"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/accounts/{address}",
+      "operationId": "Account",
+      "summary": "Account returns account details based on address.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "address",
+          "in": "path",
+          "required": true,
+          "description": "address defines the address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/address_by_id/{accountId}",
+      "operationId": "AccountAddressByID",
+      "summary": "AccountAddressByID returns account address based on account number.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "accountId",
+          "in": "path",
+          "required": true,
+          "description": "account_id is the account number of the address to be queried.",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "query",
+          "required": false,
+          "description": "Deprecated, use account_id instead\n\nid is the account number of the address to be queried. This field\nshould have been an uint64 (like all account numbers), and will be\nupdated to uint64 in a future version of the auth query.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/bech32",
+      "operationId": "Bech32Prefix",
+      "summary": "Bech32Prefix queries bech32Prefix",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/bech32/{addressBytes}",
+      "operationId": "AddressBytesToString",
+      "summary": "AddressBytesToString converts Account Address bytes to string",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "addressBytes",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/bech32/{addressString}",
+      "operationId": "AddressStringToBytes",
+      "summary": "AddressStringToBytes converts Address string to bytes",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "addressString",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/module_accounts",
+      "operationId": "ModuleAccounts",
+      "summary": "ModuleAccounts returns all the existing module accounts.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/module_accounts/{name}",
+      "operationId": "ModuleAccountByName",
+      "summary": "ModuleAccountByName returns the module account info by module name",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/auth/v1beta1/params",
+      "operationId": "AuthParams",
+      "summary": "Params queries all parameters.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

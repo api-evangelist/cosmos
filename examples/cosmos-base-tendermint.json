@@ -1,0 +1,238 @@
+{
+  "group": "cosmos/base/tendermint",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/abci_query",
+      "operationId": "ABCIQuery",
+      "summary": "ABCIQuery defines a query handler that supports ABCI queries directly to the\napplication, bypassing Tendermint completely. The ABCI query must contain\na valid and supported path, including app, custom, p2p, and store.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "data",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "path",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "height",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "prove",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "type": "boolean"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/block_results/latest",
+      "operationId": "GetLatestBlockResults",
+      "summary": "GetLatestBlockResults returns the block results for the latest block.\nBlock results contain finalize_block_events which include consensus-level\nevents like slashing, jailing, and validator set updates.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/block_results/{height}",
+      "operationId": "GetBlockResults",
+      "summary": "GetBlockResults queries block results for given height.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "height",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/blocks/latest",
+      "operationId": "GetLatestBlock",
+      "summary": "GetLatestBlock returns the latest block.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/blocks/{height}",
+      "operationId": "GetBlockByHeight",
+      "summary": "GetBlockByHeight queries block for given height.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "height",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/node_info",
+      "operationId": "GetNodeInfo",
+      "summary": "GetNodeInfo queries the current node info.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/syncing",
+      "operationId": "GetSyncing",
+      "summary": "GetSyncing queries node syncing.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/validatorsets/latest",
+      "operationId": "GetLatestValidatorSet",
+      "summary": "GetLatestValidatorSet queries latest validator-set.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "pagination.key",
+          "in": "query",
+          "required": false,
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.offset",
+          "in": "query",
+          "required": false,
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.countTotal",
+          "in": "query",
+          "required": false,
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+          "type": "boolean"
+        },
+        {
+          "name": "pagination.reverse",
+          "in": "query",
+          "required": false,
+          "description": "reverse is set to true if results are to be returned in the descending order.",
+          "type": "boolean"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/tendermint/v1beta1/validatorsets/{height}",
+      "operationId": "GetValidatorSetByHeight",
+      "summary": "GetValidatorSetByHeight queries validator-set at a given height.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "height",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "pagination.key",
+          "in": "query",
+          "required": false,
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.offset",
+          "in": "query",
+          "required": false,
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.countTotal",
+          "in": "query",
+          "required": false,
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+          "type": "boolean"
+        },
+        {
+          "name": "pagination.reverse",
+          "in": "query",
+          "required": false,
+          "description": "reverse is set to true if results are to be returned in the descending order.",
+          "type": "boolean"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

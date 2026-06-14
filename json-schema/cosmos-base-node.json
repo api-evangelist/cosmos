@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK cosmos.base.node Schemas",
+  "description": "JSON Schema definitions for the cosmos.base.node module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "cosmos.base.node.v1beta1.ConfigResponse": {
+      "type": "object",
+      "properties": {
+        "minimumGasPrice": {
+          "type": "string"
+        },
+        "pruningKeepRecent": {
+          "type": "string"
+        },
+        "pruningInterval": {
+          "type": "string"
+        },
+        "haltHeight": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "description": "ConfigResponse defines the response structure for the Config gRPC query."
+    },
+    "cosmos.base.node.v1beta1.StatusResponse": {
+      "type": "object",
+      "properties": {
+        "earliestStoreHeight": {
+          "type": "string",
+          "format": "uint64",
+          "title": "earliest block height available in the store"
+        },
+        "height": {
+          "type": "string",
+          "format": "uint64",
+          "title": "current block height"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "title": "block height timestamp"
+        },
+        "appHash": {
+          "type": "string",
+          "format": "byte",
+          "title": "app hash of the current block"
+        },
+        "validatorHash": {
+          "type": "string",
+          "format": "byte",
+          "title": "validator hash provided by the consensus header"
+        }
+      },
+      "description": "StateResponse defines the response structure for the status of a node."
+    }
+  }
+}

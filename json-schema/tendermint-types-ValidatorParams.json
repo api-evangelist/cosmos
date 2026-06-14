@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.ValidatorParams Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.ValidatorParams module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.ValidatorParams": {
+      "type": "object",
+      "properties": {
+        "pubKeyTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "ValidatorParams restrict the public key types validators can use.\nNOTE: uses ABCI pubkey naming, not Amino names."
+    }
+  }
+}

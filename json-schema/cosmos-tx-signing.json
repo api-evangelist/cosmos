@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK cosmos.tx.signing Schemas",
+  "description": "JSON Schema definitions for the cosmos.tx.signing module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "cosmos.tx.signing.v1beta1.SignMode": {
+      "type": "string",
+      "enum": [
+        "SIGN_MODE_UNSPECIFIED",
+        "SIGN_MODE_DIRECT",
+        "SIGN_MODE_TEXTUAL",
+        "SIGN_MODE_DIRECT_AUX",
+        "SIGN_MODE_LEGACY_AMINO_JSON",
+        "SIGN_MODE_EIP_191"
+      ],
+      "default": "SIGN_MODE_UNSPECIFIED",
+      "description": "SignMode represents a signing mode with its own security guarantees.\n\nThis enum should be considered a registry of all known sign modes\nin the Cosmos ecosystem. Apps are not expected to support all known\nsign modes. Apps that would like to support custom  sign modes are\nencouraged to open a small PR against this file to add a new case\nto this SignMode enum describing their sign mode so that different\napps have a consistent version of this enum.\n\n - SIGN_MODE_UNSPECIFIED: SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be\nrejected.\n - SIGN_MODE_DIRECT: SIGN_MODE_DIRECT specifies a signing mode which uses SignDoc and is\nverified with raw bytes from Tx.\n - SIGN_MODE_TEXTUAL: SIGN_MODE_TEXTUAL is a future signing mode that will verify some\nhuman-readable textual representation on top of the binary representation\nfrom SIGN_MODE_DIRECT.\n\nSince: cosmos-sdk 0.50\n - SIGN_MODE_DIRECT_AUX: SIGN_MODE_DIRECT_AUX specifies a signing mode which uses\nSignDocDirectAux. As opposed to SIGN_MODE_DIRECT, this sign mode does not\nrequire signers signing over other signers' `signer_info`.\n\nSince: cosmos-sdk 0.46\n - SIGN_MODE_LEGACY_AMINO_JSON: SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses\nAmino JSON and will be removed in the future.\n - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos\nSDK. Ref: https://eips.ethereum.org/EIPS/eip-191\n\nCurrently, SIGN_MODE_EIP_191 is registered as a SignMode enum variant,\nbut is not implemented on the SDK by default. To enable EIP-191, you need\nto pass a custom `TxConfig` that has an implementation of\n`SignModeHandler` for EIP-191. The SDK may decide to fully support\nEIP-191 in the future.\n\nSince: cosmos-sdk 0.45.2"
+    }
+  }
+}

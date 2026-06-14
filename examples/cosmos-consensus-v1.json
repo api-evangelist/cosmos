@@ -1,0 +1,18 @@
+{
+  "group": "cosmos/consensus/v1",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cosmos/consensus/v1/params",
+      "operationId": "ConsensusParams",
+      "summary": "Params queries the parameters of x/consensus module.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

@@ -1,0 +1,2262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK cosmos.staking.v1beta1 Schemas",
+  "description": "JSON Schema definitions for the cosmos.staking.v1beta1 module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "cosmos.staking.v1beta1.BondStatus": {
+      "type": "string",
+      "enum": [
+        "BOND_STATUS_UNSPECIFIED",
+        "BOND_STATUS_UNBONDED",
+        "BOND_STATUS_UNBONDING",
+        "BOND_STATUS_BONDED"
+      ],
+      "default": "BOND_STATUS_UNSPECIFIED",
+      "description": "BondStatus is the status of a validator.\n\n - BOND_STATUS_UNSPECIFIED: UNSPECIFIED defines an invalid validator status.\n - BOND_STATUS_UNBONDED: UNBONDED defines a validator that is not bonded.\n - BOND_STATUS_UNBONDING: UNBONDING defines a validator that is unbonding.\n - BOND_STATUS_BONDED: BONDED defines a validator that is bonded."
+    },
+    "cosmos.staking.v1beta1.Commission": {
+      "type": "object",
+      "properties": {
+        "commissionRates": {
+          "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+          "type": "object",
+          "properties": {
+            "rate": {
+              "type": "string",
+              "description": "rate is the commission rate charged to delegators, as a fraction."
+            },
+            "maxRate": {
+              "type": "string",
+              "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+            },
+            "maxChangeRate": {
+              "type": "string",
+              "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+            }
+          }
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "update_time is the last time the commission rate was changed."
+        }
+      },
+      "description": "Commission defines commission parameters for a given validator."
+    },
+    "cosmos.staking.v1beta1.CommissionRates": {
+      "type": "object",
+      "properties": {
+        "rate": {
+          "type": "string",
+          "description": "rate is the commission rate charged to delegators, as a fraction."
+        },
+        "maxRate": {
+          "type": "string",
+          "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+        },
+        "maxChangeRate": {
+          "type": "string",
+          "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+        }
+      },
+      "description": "CommissionRates defines the initial commission rates to be used for creating\na validator."
+    },
+    "cosmos.staking.v1beta1.Delegation": {
+      "type": "object",
+      "properties": {
+        "delegatorAddress": {
+          "type": "string",
+          "description": "delegator_address is the encoded address of the delegator."
+        },
+        "validatorAddress": {
+          "type": "string",
+          "description": "validator_address is the encoded address of the validator."
+        },
+        "shares": {
+          "type": "string",
+          "description": "shares define the delegation shares received."
+        }
+      },
+      "description": "Delegation represents the bond with tokens held by an account. It is\nowned by one delegator, and is associated with the voting power of one\nvalidator."
+    },
+    "cosmos.staking.v1beta1.DelegationResponse": {
+      "type": "object",
+      "properties": {
+        "delegation": {
+          "type": "object",
+          "properties": {
+            "delegatorAddress": {
+              "type": "string",
+              "description": "delegator_address is the encoded address of the delegator."
+            },
+            "validatorAddress": {
+              "type": "string",
+              "description": "validator_address is the encoded address of the validator."
+            },
+            "shares": {
+              "type": "string",
+              "description": "shares define the delegation shares received."
+            }
+          },
+          "description": "Delegation represents the bond with tokens held by an account. It is\nowned by one delegator, and is associated with the voting power of one\nvalidator."
+        },
+        "balance": {
+          "type": "object",
+          "properties": {
+            "denom": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "string"
+            }
+          },
+          "description": "Coin defines a token with a denomination and an amount.\n\nNOTE: The amount field is an Int which implements the custom method\nsignatures required by gogoproto."
+        }
+      },
+      "description": "DelegationResponse is equivalent to Delegation except that it contains a\nbalance in addition to shares which is more suitable for client responses."
+    },
+    "cosmos.staking.v1beta1.Description": {
+      "type": "object",
+      "properties": {
+        "moniker": {
+          "type": "string",
+          "description": "moniker defines a human-readable name for the validator."
+        },
+        "identity": {
+          "type": "string",
+          "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+        },
+        "website": {
+          "type": "string",
+          "description": "website defines an optional website link."
+        },
+        "securityContact": {
+          "type": "string",
+          "description": "security_contact defines an optional email for security contact."
+        },
+        "details": {
+          "type": "string",
+          "description": "details define other optional details."
+        }
+      },
+      "description": "Description defines a validator description."
+    },
+    "cosmos.staking.v1beta1.HistoricalInfo": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "title": "basic block info",
+              "type": "object",
+              "properties": {
+                "block": {
+                  "type": "string",
+                  "format": "uint64"
+                },
+                "app": {
+                  "type": "string",
+                  "format": "uint64"
+                }
+              },
+              "description": "Consensus captures the consensus rules for processing a block in the blockchain,\nincluding all blockchain data structures and the rules of the application's\nstate transition machine."
+            },
+            "chainId": {
+              "type": "string"
+            },
+            "height": {
+              "type": "string",
+              "format": "int64"
+            },
+            "time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "lastBlockId": {
+              "title": "prev block info",
+              "type": "object",
+              "properties": {
+                "hash": {
+                  "type": "string",
+                  "format": "byte"
+                },
+                "partSetHeader": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "hash": {
+                      "type": "string",
+                      "format": "byte"
+                    }
+                  },
+                  "title": "PartsetHeader"
+                }
+              }
+            },
+            "lastCommitHash": {
+              "type": "string",
+              "format": "byte",
+              "description": "commit from validators from the last block",
+              "title": "hashes of block data"
+            },
+            "dataHash": {
+              "type": "string",
+              "format": "byte",
+              "title": "transactions"
+            },
+            "validatorsHash": {
+              "type": "string",
+              "format": "byte",
+              "description": "validators for the current block",
+              "title": "hashes from the app output from the prev block"
+            },
+            "nextValidatorsHash": {
+              "type": "string",
+              "format": "byte",
+              "title": "validators for the next block"
+            },
+            "consensusHash": {
+              "type": "string",
+              "format": "byte",
+              "title": "consensus params for current block"
+            },
+            "appHash": {
+              "type": "string",
+              "format": "byte",
+              "title": "state after txs from the previous block"
+            },
+            "lastResultsHash": {
+              "type": "string",
+              "format": "byte",
+              "title": "root hash of all results from the txs from the previous block"
+            },
+            "evidenceHash": {
+              "type": "string",
+              "format": "byte",
+              "description": "evidence included in the block",
+              "title": "consensus info"
+            },
+            "proposerAddress": {
+              "type": "string",
+              "format": "byte",
+              "title": "original proposer of the block"
+            }
+          },
+          "description": "Header defines the structure of a block header."
+        },
+        "valset": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "operatorAddress": {
+                "type": "string",
+                "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+              },
+              "consensusPubkey": {
+                "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+                "type": "object",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                  }
+                },
+                "additionalProperties": {}
+              },
+              "jailed": {
+                "type": "boolean",
+                "description": "jailed defined whether the validator has been jailed from bonded status or not."
+              },
+              "status": {
+                "description": "status is the validator status (bonded/unbonding/unbonded).",
+                "type": "string",
+                "enum": [
+                  "BOND_STATUS_UNSPECIFIED",
+                  "BOND_STATUS_UNBONDED",
+                  "BOND_STATUS_UNBONDING",
+                  "BOND_STATUS_BONDED"
+                ],
+                "default": "BOND_STATUS_UNSPECIFIED"
+              },
+              "tokens": {
+                "type": "string",
+                "description": "tokens define the delegated tokens (incl. self-delegation)."
+              },
+              "delegatorShares": {
+                "type": "string",
+                "description": "delegator_shares defines total shares issued to a validator's delegators."
+              },
+              "description": {
+                "description": "description defines the description terms for the validator.",
+                "type": "object",
+                "properties": {
+                  "moniker": {
+                    "type": "string",
+                    "description": "moniker defines a human-readable name for the validator."
+                  },
+                  "identity": {
+                    "type": "string",
+                    "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+                  },
+                  "website": {
+                    "type": "string",
+                    "description": "website defines an optional website link."
+                  },
+                  "securityContact": {
+                    "type": "string",
+                    "description": "security_contact defines an optional email for security contact."
+                  },
+                  "details": {
+                    "type": "string",
+                    "description": "details define other optional details."
+                  }
+                }
+              },
+              "unbondingHeight": {
+                "type": "string",
+                "format": "int64",
+                "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+              },
+              "unbondingTime": {
+                "type": "string",
+                "format": "date-time",
+                "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+              },
+              "commission": {
+                "description": "commission defines the commission parameters.",
+                "type": "object",
+                "properties": {
+                  "commissionRates": {
+                    "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "string",
+                        "description": "rate is the commission rate charged to delegators, as a fraction."
+                      },
+                      "maxRate": {
+                        "type": "string",
+                        "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                      },
+                      "maxChangeRate": {
+                        "type": "string",
+                        "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                      }
+                    }
+                  },
+                  "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "update_time is the last time the commission rate was changed."
+                  }
+                }
+              },
+              "minSelfDelegation": {
+                "type": "string",
+                "description": "min_self_delegation is the validator's self declared minimum self delegation."
+              },
+              "unbondingOnHoldRefCount": {
+                "type": "string",
+                "format": "int64",
+                "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+              },
+              "unbondingIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uint64"
+                },
+                "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+              }
+            },
+            "description": "Validator defines a validator, together with the total amount of the\nValidator's bond shares and their exchange rate to coins. Slashing results in\na decrease in the exchange rate, allowing correct calculation of future\nundelegations without iterating over delegators. When coins are delegated to\nthis validator, the validator is credited with a delegation whose number of\nbond shares is based on the amount of coins delegated divided by the current\nexchange rate. Voting power can be calculated as total bonded shares\nmultiplied by exchange rate."
+          }
+        }
+      },
+      "description": "HistoricalInfo contains header and validator information for a given block.\nIt is stored as part of staking module's state, which persists the `n` most\nrecent HistoricalInfo\n(`n` is set by the staking module's `historical_entries` parameter)."
+    },
+    "cosmos.staking.v1beta1.Params": {
+      "type": "object",
+      "properties": {
+        "unbondingTime": {
+          "type": "string",
+          "description": "unbonding_time is the time duration of unbonding."
+        },
+        "maxValidators": {
+          "type": "integer",
+          "format": "int64",
+          "description": "max_validators is the maximum number of validators."
+        },
+        "maxEntries": {
+          "type": "integer",
+          "format": "int64",
+          "description": "max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio)."
+        },
+        "historicalEntries": {
+          "type": "integer",
+          "format": "int64",
+          "description": "historical_entries is the number of historical entries to persist."
+        },
+        "bondDenom": {
+          "type": "string",
+          "description": "bond_denom defines the bondable coin denomination."
+        },
+        "minCommissionRate": {
+          "type": "string",
+          "title": "min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators"
+        }
+      },
+      "description": "Params defines the parameters for the x/staking module."
+    },
+    "cosmos.staking.v1beta1.Pool": {
+      "type": "object",
+      "properties": {
+        "notBondedTokens": {
+          "type": "string"
+        },
+        "bondedTokens": {
+          "type": "string"
+        }
+      },
+      "description": "Pool is used for tracking bonded and not-bonded token supply of the bond\ndenomination."
+    },
+    "cosmos.staking.v1beta1.QueryDelegationResponse": {
+      "type": "object",
+      "properties": {
+        "delegationResponse": {
+          "description": "delegation_responses defines the delegation info of a delegation.",
+          "type": "object",
+          "properties": {
+            "delegation": {
+              "type": "object",
+              "properties": {
+                "delegatorAddress": {
+                  "type": "string",
+                  "description": "delegator_address is the encoded address of the delegator."
+                },
+                "validatorAddress": {
+                  "type": "string",
+                  "description": "validator_address is the encoded address of the validator."
+                },
+                "shares": {
+                  "type": "string",
+                  "description": "shares define the delegation shares received."
+                }
+              },
+              "description": "Delegation represents the bond with tokens held by an account. It is\nowned by one delegator, and is associated with the voting power of one\nvalidator."
+            },
+            "balance": {
+              "type": "object",
+              "properties": {
+                "denom": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "string"
+                }
+              },
+              "description": "Coin defines a token with a denomination and an amount.\n\nNOTE: The amount field is an Int which implements the custom method\nsignatures required by gogoproto."
+            }
+          }
+        }
+      },
+      "description": "QueryDelegationResponse is response type for the Query/Delegation RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryDelegatorDelegationsResponse": {
+      "type": "object",
+      "properties": {
+        "delegationResponses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "delegation": {
+                "type": "object",
+                "properties": {
+                  "delegatorAddress": {
+                    "type": "string",
+                    "description": "delegator_address is the encoded address of the delegator."
+                  },
+                  "validatorAddress": {
+                    "type": "string",
+                    "description": "validator_address is the encoded address of the validator."
+                  },
+                  "shares": {
+                    "type": "string",
+                    "description": "shares define the delegation shares received."
+                  }
+                },
+                "description": "Delegation represents the bond with tokens held by an account. It is\nowned by one delegator, and is associated with the voting power of one\nvalidator."
+              },
+              "balance": {
+                "type": "object",
+                "properties": {
+                  "denom": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  }
+                },
+                "description": "Coin defines a token with a denomination and an amount.\n\nNOTE: The amount field is an Int which implements the custom method\nsignatures required by gogoproto."
+              }
+            },
+            "description": "DelegationResponse is equivalent to Delegation except that it contains a\nbalance in addition to shares which is more suitable for client responses."
+          },
+          "description": "delegation_responses defines all the delegations' info of a delegator."
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "description": "QueryDelegatorDelegationsResponse is response type for the\nQuery/DelegatorDelegations RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryDelegatorUnbondingDelegationsResponse": {
+      "type": "object",
+      "properties": {
+        "unbondingResponses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "delegatorAddress": {
+                "type": "string",
+                "description": "delegator_address is the encoded address of the delegator."
+              },
+              "validatorAddress": {
+                "type": "string",
+                "description": "validator_address is the encoded address of the validator."
+              },
+              "entries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "creationHeight": {
+                      "type": "string",
+                      "format": "int64",
+                      "description": "creation_height is the height which the unbonding took place."
+                    },
+                    "completionTime": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "completion_time is the unix time for unbonding completion."
+                    },
+                    "initialBalance": {
+                      "type": "string",
+                      "description": "initial_balance defines the tokens initially scheduled to receive at completion."
+                    },
+                    "balance": {
+                      "type": "string",
+                      "description": "balance defines the tokens to receive at completion."
+                    },
+                    "unbondingId": {
+                      "type": "string",
+                      "format": "uint64",
+                      "title": "Incrementing id that uniquely identifies this entry"
+                    },
+                    "unbondingOnHoldRefCount": {
+                      "type": "string",
+                      "format": "int64",
+                      "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                    }
+                  },
+                  "description": "UnbondingDelegationEntry defines an unbonding object with relevant metadata."
+                },
+                "description": "entries are the unbonding delegation entries.\n\nunbonding delegation entries"
+              }
+            },
+            "description": "UnbondingDelegation stores all of a single delegator's unbonding bonds\nfor a single validator in an time-ordered list."
+          }
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "description": "QueryUnbondingDelegatorDelegationsResponse is response type for the\nQuery/UnbondingDelegatorDelegations RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryDelegatorValidatorResponse": {
+      "type": "object",
+      "properties": {
+        "validator": {
+          "description": "validator defines the validator info.",
+          "type": "object",
+          "properties": {
+            "operatorAddress": {
+              "type": "string",
+              "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+            },
+            "consensusPubkey": {
+              "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+              "type": "object",
+              "properties": {
+                "@type": {
+                  "type": "string",
+                  "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                }
+              },
+              "additionalProperties": {}
+            },
+            "jailed": {
+              "type": "boolean",
+              "description": "jailed defined whether the validator has been jailed from bonded status or not."
+            },
+            "status": {
+              "description": "status is the validator status (bonded/unbonding/unbonded).",
+              "type": "string",
+              "enum": [
+                "BOND_STATUS_UNSPECIFIED",
+                "BOND_STATUS_UNBONDED",
+                "BOND_STATUS_UNBONDING",
+                "BOND_STATUS_BONDED"
+              ],
+              "default": "BOND_STATUS_UNSPECIFIED"
+            },
+            "tokens": {
+              "type": "string",
+              "description": "tokens define the delegated tokens (incl. self-delegation)."
+            },
+            "delegatorShares": {
+              "type": "string",
+              "description": "delegator_shares defines total shares issued to a validator's delegators."
+            },
+            "description": {
+              "description": "description defines the description terms for the validator.",
+              "type": "object",
+              "properties": {
+                "moniker": {
+                  "type": "string",
+                  "description": "moniker defines a human-readable name for the validator."
+                },
+                "identity": {
+                  "type": "string",
+                  "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+                },
+                "website": {
+                  "type": "string",
+                  "description": "website defines an optional website link."
+                },
+                "securityContact": {
+                  "type": "string",
+                  "description": "security_contact defines an optional email for security contact."
+                },
+                "details": {
+                  "type": "string",
+                  "description": "details define other optional details."
+                }
+              }
+            },
+            "unbondingHeight": {
+              "type": "string",
+              "format": "int64",
+              "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+            },
+            "unbondingTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+            },
+            "commission": {
+              "description": "commission defines the commission parameters.",
+              "type": "object",
+              "properties": {
+                "commissionRates": {
+                  "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+                  "type": "object",
+                  "properties": {
+                    "rate": {
+                      "type": "string",
+                      "description": "rate is the commission rate charged to delegators, as a fraction."
+                    },
+                    "maxRate": {
+                      "type": "string",
+                      "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                    },
+                    "maxChangeRate": {
+                      "type": "string",
+                      "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                    }
+                  }
+                },
+                "updateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "update_time is the last time the commission rate was changed."
+                }
+              }
+            },
+            "minSelfDelegation": {
+              "type": "string",
+              "description": "min_self_delegation is the validator's self declared minimum self delegation."
+            },
+            "unbondingOnHoldRefCount": {
+              "type": "string",
+              "format": "int64",
+              "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+            },
+            "unbondingIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uint64"
+              },
+              "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+            }
+          }
+        }
+      },
+      "description": "QueryDelegatorValidatorResponse response type for the\nQuery/DelegatorValidator RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryDelegatorValidatorsResponse": {
+      "type": "object",
+      "properties": {
+        "validators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "operatorAddress": {
+                "type": "string",
+                "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+              },
+              "consensusPubkey": {
+                "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+                "type": "object",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                  }
+                },
+                "additionalProperties": {}
+              },
+              "jailed": {
+                "type": "boolean",
+                "description": "jailed defined whether the validator has been jailed from bonded status or not."
+              },
+              "status": {
+                "description": "status is the validator status (bonded/unbonding/unbonded).",
+                "type": "string",
+                "enum": [
+                  "BOND_STATUS_UNSPECIFIED",
+                  "BOND_STATUS_UNBONDED",
+                  "BOND_STATUS_UNBONDING",
+                  "BOND_STATUS_BONDED"
+                ],
+                "default": "BOND_STATUS_UNSPECIFIED"
+              },
+              "tokens": {
+                "type": "string",
+                "description": "tokens define the delegated tokens (incl. self-delegation)."
+              },
+              "delegatorShares": {
+                "type": "string",
+                "description": "delegator_shares defines total shares issued to a validator's delegators."
+              },
+              "description": {
+                "description": "description defines the description terms for the validator.",
+                "type": "object",
+                "properties": {
+                  "moniker": {
+                    "type": "string",
+                    "description": "moniker defines a human-readable name for the validator."
+                  },
+                  "identity": {
+                    "type": "string",
+                    "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+                  },
+                  "website": {
+                    "type": "string",
+                    "description": "website defines an optional website link."
+                  },
+                  "securityContact": {
+                    "type": "string",
+                    "description": "security_contact defines an optional email for security contact."
+                  },
+                  "details": {
+                    "type": "string",
+                    "description": "details define other optional details."
+                  }
+                }
+              },
+              "unbondingHeight": {
+                "type": "string",
+                "format": "int64",
+                "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+              },
+              "unbondingTime": {
+                "type": "string",
+                "format": "date-time",
+                "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+              },
+              "commission": {
+                "description": "commission defines the commission parameters.",
+                "type": "object",
+                "properties": {
+                  "commissionRates": {
+                    "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "string",
+                        "description": "rate is the commission rate charged to delegators, as a fraction."
+                      },
+                      "maxRate": {
+                        "type": "string",
+                        "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                      },
+                      "maxChangeRate": {
+                        "type": "string",
+                        "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                      }
+                    }
+                  },
+                  "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "update_time is the last time the commission rate was changed."
+                  }
+                }
+              },
+              "minSelfDelegation": {
+                "type": "string",
+                "description": "min_self_delegation is the validator's self declared minimum self delegation."
+              },
+              "unbondingOnHoldRefCount": {
+                "type": "string",
+                "format": "int64",
+                "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+              },
+              "unbondingIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uint64"
+                },
+                "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+              }
+            },
+            "description": "Validator defines a validator, together with the total amount of the\nValidator's bond shares and their exchange rate to coins. Slashing results in\na decrease in the exchange rate, allowing correct calculation of future\nundelegations without iterating over delegators. When coins are delegated to\nthis validator, the validator is credited with a delegation whose number of\nbond shares is based on the amount of coins delegated divided by the current\nexchange rate. Voting power can be calculated as total bonded shares\nmultiplied by exchange rate."
+          },
+          "description": "validators defines the validators' info of a delegator."
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "description": "QueryDelegatorValidatorsResponse is response type for the\nQuery/DelegatorValidators RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryHistoricalInfoResponse": {
+      "type": "object",
+      "properties": {
+        "hist": {
+          "description": "hist defines the historical info at the given height.",
+          "type": "object",
+          "properties": {
+            "header": {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "title": "basic block info",
+                  "type": "object",
+                  "properties": {
+                    "block": {
+                      "type": "string",
+                      "format": "uint64"
+                    },
+                    "app": {
+                      "type": "string",
+                      "format": "uint64"
+                    }
+                  },
+                  "description": "Consensus captures the consensus rules for processing a block in the blockchain,\nincluding all blockchain data structures and the rules of the application's\nstate transition machine."
+                },
+                "chainId": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string",
+                  "format": "int64"
+                },
+                "time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "lastBlockId": {
+                  "title": "prev block info",
+                  "type": "object",
+                  "properties": {
+                    "hash": {
+                      "type": "string",
+                      "format": "byte"
+                    },
+                    "partSetHeader": {
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "hash": {
+                          "type": "string",
+                          "format": "byte"
+                        }
+                      },
+                      "title": "PartsetHeader"
+                    }
+                  }
+                },
+                "lastCommitHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "commit from validators from the last block",
+                  "title": "hashes of block data"
+                },
+                "dataHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "title": "transactions"
+                },
+                "validatorsHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "validators for the current block",
+                  "title": "hashes from the app output from the prev block"
+                },
+                "nextValidatorsHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "title": "validators for the next block"
+                },
+                "consensusHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "title": "consensus params for current block"
+                },
+                "appHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "title": "state after txs from the previous block"
+                },
+                "lastResultsHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "title": "root hash of all results from the txs from the previous block"
+                },
+                "evidenceHash": {
+                  "type": "string",
+                  "format": "byte",
+                  "description": "evidence included in the block",
+                  "title": "consensus info"
+                },
+                "proposerAddress": {
+                  "type": "string",
+                  "format": "byte",
+                  "title": "original proposer of the block"
+                }
+              },
+              "description": "Header defines the structure of a block header."
+            },
+            "valset": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "operatorAddress": {
+                    "type": "string",
+                    "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+                  },
+                  "consensusPubkey": {
+                    "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+                    "type": "object",
+                    "properties": {
+                      "@type": {
+                        "type": "string",
+                        "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                      }
+                    },
+                    "additionalProperties": {}
+                  },
+                  "jailed": {
+                    "type": "boolean",
+                    "description": "jailed defined whether the validator has been jailed from bonded status or not."
+                  },
+                  "status": {
+                    "description": "status is the validator status (bonded/unbonding/unbonded).",
+                    "type": "string",
+                    "enum": [
+                      "BOND_STATUS_UNSPECIFIED",
+                      "BOND_STATUS_UNBONDED",
+                      "BOND_STATUS_UNBONDING",
+                      "BOND_STATUS_BONDED"
+                    ],
+                    "default": "BOND_STATUS_UNSPECIFIED"
+                  },
+                  "tokens": {
+                    "type": "string",
+                    "description": "tokens define the delegated tokens (incl. self-delegation)."
+                  },
+                  "delegatorShares": {
+                    "type": "string",
+                    "description": "delegator_shares defines total shares issued to a validator's delegators."
+                  },
+                  "description": {
+                    "description": "description defines the description terms for the validator.",
+                    "type": "object",
+                    "properties": {
+                      "moniker": {
+                        "type": "string",
+                        "description": "moniker defines a human-readable name for the validator."
+                      },
+                      "identity": {
+                        "type": "string",
+                        "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+                      },
+                      "website": {
+                        "type": "string",
+                        "description": "website defines an optional website link."
+                      },
+                      "securityContact": {
+                        "type": "string",
+                        "description": "security_contact defines an optional email for security contact."
+                      },
+                      "details": {
+                        "type": "string",
+                        "description": "details define other optional details."
+                      }
+                    }
+                  },
+                  "unbondingHeight": {
+                    "type": "string",
+                    "format": "int64",
+                    "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+                  },
+                  "unbondingTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+                  },
+                  "commission": {
+                    "description": "commission defines the commission parameters.",
+                    "type": "object",
+                    "properties": {
+                      "commissionRates": {
+                        "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+                        "type": "object",
+                        "properties": {
+                          "rate": {
+                            "type": "string",
+                            "description": "rate is the commission rate charged to delegators, as a fraction."
+                          },
+                          "maxRate": {
+                            "type": "string",
+                            "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                          },
+                          "maxChangeRate": {
+                            "type": "string",
+                            "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                          }
+                        }
+                      },
+                      "updateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "update_time is the last time the commission rate was changed."
+                      }
+                    }
+                  },
+                  "minSelfDelegation": {
+                    "type": "string",
+                    "description": "min_self_delegation is the validator's self declared minimum self delegation."
+                  },
+                  "unbondingOnHoldRefCount": {
+                    "type": "string",
+                    "format": "int64",
+                    "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+                  },
+                  "unbondingIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uint64"
+                    },
+                    "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+                  }
+                },
+                "description": "Validator defines a validator, together with the total amount of the\nValidator's bond shares and their exchange rate to coins. Slashing results in\na decrease in the exchange rate, allowing correct calculation of future\nundelegations without iterating over delegators. When coins are delegated to\nthis validator, the validator is credited with a delegation whose number of\nbond shares is based on the amount of coins delegated divided by the current\nexchange rate. Voting power can be calculated as total bonded shares\nmultiplied by exchange rate."
+              }
+            }
+          }
+        }
+      },
+      "description": "QueryHistoricalInfoResponse is response type for the Query/HistoricalInfo RPC\nmethod."
+    },
+    "cosmos.staking.v1beta1.QueryParamsResponse": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "description": "params holds all the parameters of this module.",
+          "type": "object",
+          "properties": {
+            "unbondingTime": {
+              "type": "string",
+              "description": "unbonding_time is the time duration of unbonding."
+            },
+            "maxValidators": {
+              "type": "integer",
+              "format": "int64",
+              "description": "max_validators is the maximum number of validators."
+            },
+            "maxEntries": {
+              "type": "integer",
+              "format": "int64",
+              "description": "max_entries is the max entries for either unbonding delegation or redelegation (per pair/trio)."
+            },
+            "historicalEntries": {
+              "type": "integer",
+              "format": "int64",
+              "description": "historical_entries is the number of historical entries to persist."
+            },
+            "bondDenom": {
+              "type": "string",
+              "description": "bond_denom defines the bondable coin denomination."
+            },
+            "minCommissionRate": {
+              "type": "string",
+              "title": "min_commission_rate is the chain-wide minimum commission rate that a validator can charge their delegators"
+            }
+          }
+        }
+      },
+      "description": "QueryParamsResponse is response type for the Query/Params RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryPoolResponse": {
+      "type": "object",
+      "properties": {
+        "pool": {
+          "description": "pool defines the pool info.",
+          "type": "object",
+          "properties": {
+            "notBondedTokens": {
+              "type": "string"
+            },
+            "bondedTokens": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "description": "QueryPoolResponse is response type for the Query/Pool RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryRedelegationsResponse": {
+      "type": "object",
+      "properties": {
+        "redelegationResponses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "redelegation": {
+                "type": "object",
+                "properties": {
+                  "delegatorAddress": {
+                    "type": "string",
+                    "description": "delegator_address is the bech32-encoded address of the delegator."
+                  },
+                  "validatorSrcAddress": {
+                    "type": "string",
+                    "description": "validator_src_address is the validator redelegation source operator address."
+                  },
+                  "validatorDstAddress": {
+                    "type": "string",
+                    "description": "validator_dst_address is the validator redelegation destination operator address."
+                  },
+                  "entries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "creationHeight": {
+                          "type": "string",
+                          "format": "int64",
+                          "description": "creation_height  defines the height which the redelegation took place."
+                        },
+                        "completionTime": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "completion_time defines the unix time for redelegation completion."
+                        },
+                        "initialBalance": {
+                          "type": "string",
+                          "description": "initial_balance defines the initial balance when redelegation started."
+                        },
+                        "sharesDst": {
+                          "type": "string",
+                          "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+                        },
+                        "unbondingId": {
+                          "type": "string",
+                          "format": "uint64",
+                          "title": "Incrementing id that uniquely identifies this entry"
+                        },
+                        "unbondingOnHoldRefCount": {
+                          "type": "string",
+                          "format": "int64",
+                          "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                        }
+                      },
+                      "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+                    },
+                    "description": "entries are the redelegation entries.\n\nredelegation entries"
+                  }
+                },
+                "description": "Redelegation contains the list of a particular delegator's redelegating bonds\nfrom a particular source validator to a particular destination validator."
+              },
+              "entries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "redelegationEntry": {
+                      "type": "object",
+                      "properties": {
+                        "creationHeight": {
+                          "type": "string",
+                          "format": "int64",
+                          "description": "creation_height  defines the height which the redelegation took place."
+                        },
+                        "completionTime": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "completion_time defines the unix time for redelegation completion."
+                        },
+                        "initialBalance": {
+                          "type": "string",
+                          "description": "initial_balance defines the initial balance when redelegation started."
+                        },
+                        "sharesDst": {
+                          "type": "string",
+                          "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+                        },
+                        "unbondingId": {
+                          "type": "string",
+                          "format": "uint64",
+                          "title": "Incrementing id that uniquely identifies this entry"
+                        },
+                        "unbondingOnHoldRefCount": {
+                          "type": "string",
+                          "format": "int64",
+                          "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                        }
+                      },
+                      "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+                    },
+                    "balance": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "RedelegationEntryResponse is equivalent to a RedelegationEntry except that it\ncontains a balance in addition to shares which is more suitable for client\nresponses."
+                }
+              }
+            },
+            "description": "RedelegationResponse is equivalent to a Redelegation except that its entries\ncontain a balance in addition to shares which is more suitable for client\nresponses."
+          }
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "description": "QueryRedelegationsResponse is response type for the Query/Redelegations RPC\nmethod."
+    },
+    "cosmos.staking.v1beta1.QueryUnbondingDelegationResponse": {
+      "type": "object",
+      "properties": {
+        "unbond": {
+          "description": "unbond defines the unbonding information of a delegation.",
+          "type": "object",
+          "properties": {
+            "delegatorAddress": {
+              "type": "string",
+              "description": "delegator_address is the encoded address of the delegator."
+            },
+            "validatorAddress": {
+              "type": "string",
+              "description": "validator_address is the encoded address of the validator."
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "creationHeight": {
+                    "type": "string",
+                    "format": "int64",
+                    "description": "creation_height is the height which the unbonding took place."
+                  },
+                  "completionTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "completion_time is the unix time for unbonding completion."
+                  },
+                  "initialBalance": {
+                    "type": "string",
+                    "description": "initial_balance defines the tokens initially scheduled to receive at completion."
+                  },
+                  "balance": {
+                    "type": "string",
+                    "description": "balance defines the tokens to receive at completion."
+                  },
+                  "unbondingId": {
+                    "type": "string",
+                    "format": "uint64",
+                    "title": "Incrementing id that uniquely identifies this entry"
+                  },
+                  "unbondingOnHoldRefCount": {
+                    "type": "string",
+                    "format": "int64",
+                    "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                  }
+                },
+                "description": "UnbondingDelegationEntry defines an unbonding object with relevant metadata."
+              },
+              "description": "entries are the unbonding delegation entries.\n\nunbonding delegation entries"
+            }
+          }
+        }
+      },
+      "description": "QueryDelegationResponse is response type for the Query/UnbondingDelegation\nRPC method."
+    },
+    "cosmos.staking.v1beta1.QueryValidatorDelegationsResponse": {
+      "type": "object",
+      "properties": {
+        "delegationResponses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "delegation": {
+                "type": "object",
+                "properties": {
+                  "delegatorAddress": {
+                    "type": "string",
+                    "description": "delegator_address is the encoded address of the delegator."
+                  },
+                  "validatorAddress": {
+                    "type": "string",
+                    "description": "validator_address is the encoded address of the validator."
+                  },
+                  "shares": {
+                    "type": "string",
+                    "description": "shares define the delegation shares received."
+                  }
+                },
+                "description": "Delegation represents the bond with tokens held by an account. It is\nowned by one delegator, and is associated with the voting power of one\nvalidator."
+              },
+              "balance": {
+                "type": "object",
+                "properties": {
+                  "denom": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  }
+                },
+                "description": "Coin defines a token with a denomination and an amount.\n\nNOTE: The amount field is an Int which implements the custom method\nsignatures required by gogoproto."
+              }
+            },
+            "description": "DelegationResponse is equivalent to Delegation except that it contains a\nbalance in addition to shares which is more suitable for client responses."
+          }
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "title": "QueryValidatorDelegationsResponse is response type for the\nQuery/ValidatorDelegations RPC method"
+    },
+    "cosmos.staking.v1beta1.QueryValidatorResponse": {
+      "type": "object",
+      "properties": {
+        "validator": {
+          "description": "validator defines the validator info.",
+          "type": "object",
+          "properties": {
+            "operatorAddress": {
+              "type": "string",
+              "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+            },
+            "consensusPubkey": {
+              "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+              "type": "object",
+              "properties": {
+                "@type": {
+                  "type": "string",
+                  "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                }
+              },
+              "additionalProperties": {}
+            },
+            "jailed": {
+              "type": "boolean",
+              "description": "jailed defined whether the validator has been jailed from bonded status or not."
+            },
+            "status": {
+              "description": "status is the validator status (bonded/unbonding/unbonded).",
+              "type": "string",
+              "enum": [
+                "BOND_STATUS_UNSPECIFIED",
+                "BOND_STATUS_UNBONDED",
+                "BOND_STATUS_UNBONDING",
+                "BOND_STATUS_BONDED"
+              ],
+              "default": "BOND_STATUS_UNSPECIFIED"
+            },
+            "tokens": {
+              "type": "string",
+              "description": "tokens define the delegated tokens (incl. self-delegation)."
+            },
+            "delegatorShares": {
+              "type": "string",
+              "description": "delegator_shares defines total shares issued to a validator's delegators."
+            },
+            "description": {
+              "description": "description defines the description terms for the validator.",
+              "type": "object",
+              "properties": {
+                "moniker": {
+                  "type": "string",
+                  "description": "moniker defines a human-readable name for the validator."
+                },
+                "identity": {
+                  "type": "string",
+                  "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+                },
+                "website": {
+                  "type": "string",
+                  "description": "website defines an optional website link."
+                },
+                "securityContact": {
+                  "type": "string",
+                  "description": "security_contact defines an optional email for security contact."
+                },
+                "details": {
+                  "type": "string",
+                  "description": "details define other optional details."
+                }
+              }
+            },
+            "unbondingHeight": {
+              "type": "string",
+              "format": "int64",
+              "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+            },
+            "unbondingTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+            },
+            "commission": {
+              "description": "commission defines the commission parameters.",
+              "type": "object",
+              "properties": {
+                "commissionRates": {
+                  "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+                  "type": "object",
+                  "properties": {
+                    "rate": {
+                      "type": "string",
+                      "description": "rate is the commission rate charged to delegators, as a fraction."
+                    },
+                    "maxRate": {
+                      "type": "string",
+                      "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                    },
+                    "maxChangeRate": {
+                      "type": "string",
+                      "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                    }
+                  }
+                },
+                "updateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "update_time is the last time the commission rate was changed."
+                }
+              }
+            },
+            "minSelfDelegation": {
+              "type": "string",
+              "description": "min_self_delegation is the validator's self declared minimum self delegation."
+            },
+            "unbondingOnHoldRefCount": {
+              "type": "string",
+              "format": "int64",
+              "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+            },
+            "unbondingIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uint64"
+              },
+              "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+            }
+          }
+        }
+      },
+      "title": "QueryValidatorResponse is response type for the Query/Validator RPC method"
+    },
+    "cosmos.staking.v1beta1.QueryValidatorUnbondingDelegationsResponse": {
+      "type": "object",
+      "properties": {
+        "unbondingResponses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "delegatorAddress": {
+                "type": "string",
+                "description": "delegator_address is the encoded address of the delegator."
+              },
+              "validatorAddress": {
+                "type": "string",
+                "description": "validator_address is the encoded address of the validator."
+              },
+              "entries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "creationHeight": {
+                      "type": "string",
+                      "format": "int64",
+                      "description": "creation_height is the height which the unbonding took place."
+                    },
+                    "completionTime": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "completion_time is the unix time for unbonding completion."
+                    },
+                    "initialBalance": {
+                      "type": "string",
+                      "description": "initial_balance defines the tokens initially scheduled to receive at completion."
+                    },
+                    "balance": {
+                      "type": "string",
+                      "description": "balance defines the tokens to receive at completion."
+                    },
+                    "unbondingId": {
+                      "type": "string",
+                      "format": "uint64",
+                      "title": "Incrementing id that uniquely identifies this entry"
+                    },
+                    "unbondingOnHoldRefCount": {
+                      "type": "string",
+                      "format": "int64",
+                      "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                    }
+                  },
+                  "description": "UnbondingDelegationEntry defines an unbonding object with relevant metadata."
+                },
+                "description": "entries are the unbonding delegation entries.\n\nunbonding delegation entries"
+              }
+            },
+            "description": "UnbondingDelegation stores all of a single delegator's unbonding bonds\nfor a single validator in an time-ordered list."
+          }
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "description": "QueryValidatorUnbondingDelegationsResponse is response type for the\nQuery/ValidatorUnbondingDelegations RPC method."
+    },
+    "cosmos.staking.v1beta1.QueryValidatorsResponse": {
+      "type": "object",
+      "properties": {
+        "validators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "operatorAddress": {
+                "type": "string",
+                "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+              },
+              "consensusPubkey": {
+                "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+                "type": "object",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                  }
+                },
+                "additionalProperties": {}
+              },
+              "jailed": {
+                "type": "boolean",
+                "description": "jailed defined whether the validator has been jailed from bonded status or not."
+              },
+              "status": {
+                "description": "status is the validator status (bonded/unbonding/unbonded).",
+                "type": "string",
+                "enum": [
+                  "BOND_STATUS_UNSPECIFIED",
+                  "BOND_STATUS_UNBONDED",
+                  "BOND_STATUS_UNBONDING",
+                  "BOND_STATUS_BONDED"
+                ],
+                "default": "BOND_STATUS_UNSPECIFIED"
+              },
+              "tokens": {
+                "type": "string",
+                "description": "tokens define the delegated tokens (incl. self-delegation)."
+              },
+              "delegatorShares": {
+                "type": "string",
+                "description": "delegator_shares defines total shares issued to a validator's delegators."
+              },
+              "description": {
+                "description": "description defines the description terms for the validator.",
+                "type": "object",
+                "properties": {
+                  "moniker": {
+                    "type": "string",
+                    "description": "moniker defines a human-readable name for the validator."
+                  },
+                  "identity": {
+                    "type": "string",
+                    "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+                  },
+                  "website": {
+                    "type": "string",
+                    "description": "website defines an optional website link."
+                  },
+                  "securityContact": {
+                    "type": "string",
+                    "description": "security_contact defines an optional email for security contact."
+                  },
+                  "details": {
+                    "type": "string",
+                    "description": "details define other optional details."
+                  }
+                }
+              },
+              "unbondingHeight": {
+                "type": "string",
+                "format": "int64",
+                "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+              },
+              "unbondingTime": {
+                "type": "string",
+                "format": "date-time",
+                "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+              },
+              "commission": {
+                "description": "commission defines the commission parameters.",
+                "type": "object",
+                "properties": {
+                  "commissionRates": {
+                    "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "string",
+                        "description": "rate is the commission rate charged to delegators, as a fraction."
+                      },
+                      "maxRate": {
+                        "type": "string",
+                        "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                      },
+                      "maxChangeRate": {
+                        "type": "string",
+                        "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                      }
+                    }
+                  },
+                  "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "update_time is the last time the commission rate was changed."
+                  }
+                }
+              },
+              "minSelfDelegation": {
+                "type": "string",
+                "description": "min_self_delegation is the validator's self declared minimum self delegation."
+              },
+              "unbondingOnHoldRefCount": {
+                "type": "string",
+                "format": "int64",
+                "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+              },
+              "unbondingIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uint64"
+                },
+                "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+              }
+            },
+            "description": "Validator defines a validator, together with the total amount of the\nValidator's bond shares and their exchange rate to coins. Slashing results in\na decrease in the exchange rate, allowing correct calculation of future\nundelegations without iterating over delegators. When coins are delegated to\nthis validator, the validator is credited with a delegation whose number of\nbond shares is based on the amount of coins delegated divided by the current\nexchange rate. Voting power can be calculated as total bonded shares\nmultiplied by exchange rate."
+          },
+          "description": "validators contains all the queried validators."
+        },
+        "pagination": {
+          "description": "pagination defines the pagination in the response.",
+          "type": "object",
+          "properties": {
+            "nextKey": {
+              "type": "string",
+              "format": "byte",
+              "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+            },
+            "total": {
+              "type": "string",
+              "format": "uint64",
+              "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+            }
+          }
+        }
+      },
+      "title": "QueryValidatorsResponse is response type for the Query/Validators RPC method"
+    },
+    "cosmos.staking.v1beta1.Redelegation": {
+      "type": "object",
+      "properties": {
+        "delegatorAddress": {
+          "type": "string",
+          "description": "delegator_address is the bech32-encoded address of the delegator."
+        },
+        "validatorSrcAddress": {
+          "type": "string",
+          "description": "validator_src_address is the validator redelegation source operator address."
+        },
+        "validatorDstAddress": {
+          "type": "string",
+          "description": "validator_dst_address is the validator redelegation destination operator address."
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "creationHeight": {
+                "type": "string",
+                "format": "int64",
+                "description": "creation_height  defines the height which the redelegation took place."
+              },
+              "completionTime": {
+                "type": "string",
+                "format": "date-time",
+                "description": "completion_time defines the unix time for redelegation completion."
+              },
+              "initialBalance": {
+                "type": "string",
+                "description": "initial_balance defines the initial balance when redelegation started."
+              },
+              "sharesDst": {
+                "type": "string",
+                "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+              },
+              "unbondingId": {
+                "type": "string",
+                "format": "uint64",
+                "title": "Incrementing id that uniquely identifies this entry"
+              },
+              "unbondingOnHoldRefCount": {
+                "type": "string",
+                "format": "int64",
+                "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+              }
+            },
+            "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+          },
+          "description": "entries are the redelegation entries.\n\nredelegation entries"
+        }
+      },
+      "description": "Redelegation contains the list of a particular delegator's redelegating bonds\nfrom a particular source validator to a particular destination validator."
+    },
+    "cosmos.staking.v1beta1.RedelegationEntry": {
+      "type": "object",
+      "properties": {
+        "creationHeight": {
+          "type": "string",
+          "format": "int64",
+          "description": "creation_height  defines the height which the redelegation took place."
+        },
+        "completionTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "completion_time defines the unix time for redelegation completion."
+        },
+        "initialBalance": {
+          "type": "string",
+          "description": "initial_balance defines the initial balance when redelegation started."
+        },
+        "sharesDst": {
+          "type": "string",
+          "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+        },
+        "unbondingId": {
+          "type": "string",
+          "format": "uint64",
+          "title": "Incrementing id that uniquely identifies this entry"
+        },
+        "unbondingOnHoldRefCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+        }
+      },
+      "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+    },
+    "cosmos.staking.v1beta1.RedelegationEntryResponse": {
+      "type": "object",
+      "properties": {
+        "redelegationEntry": {
+          "type": "object",
+          "properties": {
+            "creationHeight": {
+              "type": "string",
+              "format": "int64",
+              "description": "creation_height  defines the height which the redelegation took place."
+            },
+            "completionTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "completion_time defines the unix time for redelegation completion."
+            },
+            "initialBalance": {
+              "type": "string",
+              "description": "initial_balance defines the initial balance when redelegation started."
+            },
+            "sharesDst": {
+              "type": "string",
+              "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+            },
+            "unbondingId": {
+              "type": "string",
+              "format": "uint64",
+              "title": "Incrementing id that uniquely identifies this entry"
+            },
+            "unbondingOnHoldRefCount": {
+              "type": "string",
+              "format": "int64",
+              "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+            }
+          },
+          "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+        },
+        "balance": {
+          "type": "string"
+        }
+      },
+      "description": "RedelegationEntryResponse is equivalent to a RedelegationEntry except that it\ncontains a balance in addition to shares which is more suitable for client\nresponses."
+    },
+    "cosmos.staking.v1beta1.RedelegationResponse": {
+      "type": "object",
+      "properties": {
+        "redelegation": {
+          "type": "object",
+          "properties": {
+            "delegatorAddress": {
+              "type": "string",
+              "description": "delegator_address is the bech32-encoded address of the delegator."
+            },
+            "validatorSrcAddress": {
+              "type": "string",
+              "description": "validator_src_address is the validator redelegation source operator address."
+            },
+            "validatorDstAddress": {
+              "type": "string",
+              "description": "validator_dst_address is the validator redelegation destination operator address."
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "creationHeight": {
+                    "type": "string",
+                    "format": "int64",
+                    "description": "creation_height  defines the height which the redelegation took place."
+                  },
+                  "completionTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "completion_time defines the unix time for redelegation completion."
+                  },
+                  "initialBalance": {
+                    "type": "string",
+                    "description": "initial_balance defines the initial balance when redelegation started."
+                  },
+                  "sharesDst": {
+                    "type": "string",
+                    "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+                  },
+                  "unbondingId": {
+                    "type": "string",
+                    "format": "uint64",
+                    "title": "Incrementing id that uniquely identifies this entry"
+                  },
+                  "unbondingOnHoldRefCount": {
+                    "type": "string",
+                    "format": "int64",
+                    "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                  }
+                },
+                "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+              },
+              "description": "entries are the redelegation entries.\n\nredelegation entries"
+            }
+          },
+          "description": "Redelegation contains the list of a particular delegator's redelegating bonds\nfrom a particular source validator to a particular destination validator."
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "redelegationEntry": {
+                "type": "object",
+                "properties": {
+                  "creationHeight": {
+                    "type": "string",
+                    "format": "int64",
+                    "description": "creation_height  defines the height which the redelegation took place."
+                  },
+                  "completionTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "completion_time defines the unix time for redelegation completion."
+                  },
+                  "initialBalance": {
+                    "type": "string",
+                    "description": "initial_balance defines the initial balance when redelegation started."
+                  },
+                  "sharesDst": {
+                    "type": "string",
+                    "description": "shares_dst is the amount of destination-validator shares created by redelegation."
+                  },
+                  "unbondingId": {
+                    "type": "string",
+                    "format": "uint64",
+                    "title": "Incrementing id that uniquely identifies this entry"
+                  },
+                  "unbondingOnHoldRefCount": {
+                    "type": "string",
+                    "format": "int64",
+                    "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+                  }
+                },
+                "description": "RedelegationEntry defines a redelegation object with relevant metadata."
+              },
+              "balance": {
+                "type": "string"
+              }
+            },
+            "description": "RedelegationEntryResponse is equivalent to a RedelegationEntry except that it\ncontains a balance in addition to shares which is more suitable for client\nresponses."
+          }
+        }
+      },
+      "description": "RedelegationResponse is equivalent to a Redelegation except that its entries\ncontain a balance in addition to shares which is more suitable for client\nresponses."
+    },
+    "cosmos.staking.v1beta1.UnbondingDelegation": {
+      "type": "object",
+      "properties": {
+        "delegatorAddress": {
+          "type": "string",
+          "description": "delegator_address is the encoded address of the delegator."
+        },
+        "validatorAddress": {
+          "type": "string",
+          "description": "validator_address is the encoded address of the validator."
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "creationHeight": {
+                "type": "string",
+                "format": "int64",
+                "description": "creation_height is the height which the unbonding took place."
+              },
+              "completionTime": {
+                "type": "string",
+                "format": "date-time",
+                "description": "completion_time is the unix time for unbonding completion."
+              },
+              "initialBalance": {
+                "type": "string",
+                "description": "initial_balance defines the tokens initially scheduled to receive at completion."
+              },
+              "balance": {
+                "type": "string",
+                "description": "balance defines the tokens to receive at completion."
+              },
+              "unbondingId": {
+                "type": "string",
+                "format": "uint64",
+                "title": "Incrementing id that uniquely identifies this entry"
+              },
+              "unbondingOnHoldRefCount": {
+                "type": "string",
+                "format": "int64",
+                "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+              }
+            },
+            "description": "UnbondingDelegationEntry defines an unbonding object with relevant metadata."
+          },
+          "description": "entries are the unbonding delegation entries.\n\nunbonding delegation entries"
+        }
+      },
+      "description": "UnbondingDelegation stores all of a single delegator's unbonding bonds\nfor a single validator in an time-ordered list."
+    },
+    "cosmos.staking.v1beta1.UnbondingDelegationEntry": {
+      "type": "object",
+      "properties": {
+        "creationHeight": {
+          "type": "string",
+          "format": "int64",
+          "description": "creation_height is the height which the unbonding took place."
+        },
+        "completionTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "completion_time is the unix time for unbonding completion."
+        },
+        "initialBalance": {
+          "type": "string",
+          "description": "initial_balance defines the tokens initially scheduled to receive at completion."
+        },
+        "balance": {
+          "type": "string",
+          "description": "balance defines the tokens to receive at completion."
+        },
+        "unbondingId": {
+          "type": "string",
+          "format": "uint64",
+          "title": "Incrementing id that uniquely identifies this entry"
+        },
+        "unbondingOnHoldRefCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "Strictly positive if this entry's unbonding has been stopped by external modules"
+        }
+      },
+      "description": "UnbondingDelegationEntry defines an unbonding object with relevant metadata."
+    },
+    "cosmos.staking.v1beta1.Validator": {
+      "type": "object",
+      "properties": {
+        "operatorAddress": {
+          "type": "string",
+          "description": "operator_address defines the address of the validator's operator; bech encoded in JSON."
+        },
+        "consensusPubkey": {
+          "description": "consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.",
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+            }
+          },
+          "additionalProperties": {}
+        },
+        "jailed": {
+          "type": "boolean",
+          "description": "jailed defined whether the validator has been jailed from bonded status or not."
+        },
+        "status": {
+          "description": "status is the validator status (bonded/unbonding/unbonded).",
+          "type": "string",
+          "enum": [
+            "BOND_STATUS_UNSPECIFIED",
+            "BOND_STATUS_UNBONDED",
+            "BOND_STATUS_UNBONDING",
+            "BOND_STATUS_BONDED"
+          ],
+          "default": "BOND_STATUS_UNSPECIFIED"
+        },
+        "tokens": {
+          "type": "string",
+          "description": "tokens define the delegated tokens (incl. self-delegation)."
+        },
+        "delegatorShares": {
+          "type": "string",
+          "description": "delegator_shares defines total shares issued to a validator's delegators."
+        },
+        "description": {
+          "description": "description defines the description terms for the validator.",
+          "type": "object",
+          "properties": {
+            "moniker": {
+              "type": "string",
+              "description": "moniker defines a human-readable name for the validator."
+            },
+            "identity": {
+              "type": "string",
+              "description": "identity defines an optional identity signature (ex. UPort or Keybase)."
+            },
+            "website": {
+              "type": "string",
+              "description": "website defines an optional website link."
+            },
+            "securityContact": {
+              "type": "string",
+              "description": "security_contact defines an optional email for security contact."
+            },
+            "details": {
+              "type": "string",
+              "description": "details define other optional details."
+            }
+          }
+        },
+        "unbondingHeight": {
+          "type": "string",
+          "format": "int64",
+          "description": "unbonding_height defines, if unbonding, the height at which this validator has begun unbonding."
+        },
+        "unbondingTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "unbonding_time defines, if unbonding, the min time for the validator to complete unbonding."
+        },
+        "commission": {
+          "description": "commission defines the commission parameters.",
+          "type": "object",
+          "properties": {
+            "commissionRates": {
+              "description": "commission_rates defines the initial commission rates to be used for creating a validator.",
+              "type": "object",
+              "properties": {
+                "rate": {
+                  "type": "string",
+                  "description": "rate is the commission rate charged to delegators, as a fraction."
+                },
+                "maxRate": {
+                  "type": "string",
+                  "description": "max_rate defines the maximum commission rate which validator can ever charge, as a fraction."
+                },
+                "maxChangeRate": {
+                  "type": "string",
+                  "description": "max_change_rate defines the maximum daily increase of the validator commission, as a fraction."
+                }
+              }
+            },
+            "updateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "update_time is the last time the commission rate was changed."
+            }
+          }
+        },
+        "minSelfDelegation": {
+          "type": "string",
+          "description": "min_self_delegation is the validator's self declared minimum self delegation."
+        },
+        "unbondingOnHoldRefCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "strictly positive if this validator's unbonding has been stopped by external modules"
+        },
+        "unbondingIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "title": "list of unbonding ids, each uniquely identifying an unbonding of this validator"
+        }
+      },
+      "description": "Validator defines a validator, together with the total amount of the\nValidator's bond shares and their exchange rate to coins. Slashing results in\na decrease in the exchange rate, allowing correct calculation of future\nundelegations without iterating over delegators. When coins are delegated to\nthis validator, the validator is credited with a delegation whose number of\nbond shares is based on the amount of coins delegated divided by the current\nexchange rate. Voting power can be calculated as total bonded shares\nmultiplied by exchange rate."
+    }
+  }
+}

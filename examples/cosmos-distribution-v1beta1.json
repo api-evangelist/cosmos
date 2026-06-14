@@ -1,0 +1,320 @@
+{
+  "group": "cosmos/distribution/v1beta1",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/community_pool",
+      "operationId": "CommunityPool",
+      "summary": "CommunityPool queries the community pool coins.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/delegators/{delegatorAddress}/rewards",
+      "operationId": "DelegationTotalRewards",
+      "summary": "DelegationTotalRewards queries the total rewards accrued by each\nvalidator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "delegatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "delegator_address defines the delegator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/delegators/{delegatorAddress}/rewards/{validatorAddress}",
+      "operationId": "DelegationRewards",
+      "summary": "DelegationRewards queries the total rewards accrued by a delegation.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "delegatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "delegator_address defines the delegator address to query for.",
+          "type": "string"
+        },
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/delegators/{delegatorAddress}/starting_info/{validatorAddress}",
+      "operationId": "DelegatorStartingInfo",
+      "summary": "DelegatorStartingInfo queries the starting info for a delegator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "delegatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "delegator_address defines the delegator address to query for.",
+          "type": "string"
+        },
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/delegators/{delegatorAddress}/validators",
+      "operationId": "DelegatorValidators",
+      "summary": "DelegatorValidators queries the validators of a delegator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "delegatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "delegator_address defines the delegator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/delegators/{delegatorAddress}/withdraw_address",
+      "operationId": "DelegatorWithdrawAddress",
+      "summary": "DelegatorWithdrawAddress queries withdraw address of a delegator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "delegatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "delegator_address defines the delegator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/params",
+      "operationId": "DistributionParams",
+      "summary": "Params queries params of the distribution module.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/validators/{validatorAddress}",
+      "operationId": "ValidatorDistributionInfo",
+      "summary": "ValidatorDistributionInfo queries validator commission and self-delegation rewards for validator",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/validators/{validatorAddress}/commission",
+      "operationId": "ValidatorCommission",
+      "summary": "ValidatorCommission queries accumulated commission for a validator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/validators/{validatorAddress}/current_rewards",
+      "operationId": "ValidatorCurrentRewards",
+      "summary": "ValidatorCurrentRewards queries current rewards for a validator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/validators/{validatorAddress}/historical_rewards/{period}",
+      "operationId": "ValidatorHistoricalRewards",
+      "summary": "ValidatorHistoricalRewards queries historical rewards for a validator at a specific period.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        },
+        {
+          "name": "period",
+          "in": "path",
+          "required": true,
+          "description": "period defines the period to query historical rewards for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/validators/{validatorAddress}/outstanding_rewards",
+      "operationId": "ValidatorOutstandingRewards",
+      "summary": "ValidatorOutstandingRewards queries rewards of a validator address.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/distribution/v1beta1/validators/{validatorAddress}/slashes",
+      "operationId": "ValidatorSlashes",
+      "summary": "ValidatorSlashes queries slash events of a validator.",
+      "tags": [
+        "Query"
+      ],
+      "parameters": [
+        {
+          "name": "validatorAddress",
+          "in": "path",
+          "required": true,
+          "description": "validator_address defines the validator address to query for.",
+          "type": "string"
+        },
+        {
+          "name": "startingHeight",
+          "in": "query",
+          "required": false,
+          "description": "starting_height defines the optional starting height to query the slashes.",
+          "type": "string"
+        },
+        {
+          "name": "endingHeight",
+          "in": "query",
+          "required": false,
+          "description": "starting_height defines the optional ending height to query the slashes.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.key",
+          "in": "query",
+          "required": false,
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.offset",
+          "in": "query",
+          "required": false,
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.countTotal",
+          "in": "query",
+          "required": false,
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+          "type": "boolean"
+        },
+        {
+          "name": "pagination.reverse",
+          "in": "query",
+          "required": false,
+          "description": "reverse is set to true if results are to be returned in the descending order.",
+          "type": "boolean"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

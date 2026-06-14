@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.VersionParams Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.VersionParams module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.VersionParams": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "description": "VersionParams contains the ABCI application version."
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.EvidenceParams Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.EvidenceParams module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.EvidenceParams": {
+      "type": "object",
+      "properties": {
+        "maxAgeNumBlocks": {
+          "type": "string",
+          "format": "int64",
+          "description": "Max age of evidence, in blocks.\n\nThe basic formula for calculating this is: MaxAgeDuration / {average block\ntime}."
+        },
+        "maxAgeDuration": {
+          "type": "string",
+          "description": "Max age of evidence, in time.\n\nIt should correspond with an app's \"unbonding period\" or other similar\nmechanism for handling [Nothing-At-Stake\nattacks](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed)."
+        },
+        "maxBytes": {
+          "type": "string",
+          "format": "int64",
+          "title": "This sets the maximum size of total evidence in bytes that can be committed in a single block.\nand should fall comfortably under the max block bytes.\nDefault is 1048576 or 1MB"
+        }
+      },
+      "description": "EvidenceParams determine how we handle evidence of malfeasance."
+    }
+  }
+}

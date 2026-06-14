@@ -1,0 +1,87 @@
+{
+  "@context": {
+    "@vocab": "https://cosmos.network/vocab/",
+    "cosmos": "https://cosmos.network/vocab/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "baseURL": {
+      "@id": "cosmos:baseURL",
+      "@type": "@id"
+    },
+    "operationId": "cosmos:operationId",
+    "summary": "cosmos:summary",
+    "tags": "cosmos:tags",
+    "path": "cosmos:path",
+    "method": "cosmos:method",
+    "parameters": "cosmos:parameters",
+    "address": {
+      "@id": "cosmos:address",
+      "@type": "xsd:string"
+    },
+    "delegatorAddr": {
+      "@id": "cosmos:delegatorAddr",
+      "@type": "xsd:string"
+    },
+    "validatorAddr": {
+      "@id": "cosmos:validatorAddr",
+      "@type": "xsd:string"
+    },
+    "proposalId": {
+      "@id": "cosmos:proposalId",
+      "@type": "xsd:string"
+    },
+    "channelId": {
+      "@id": "cosmos:channelId",
+      "@type": "xsd:string"
+    },
+    "portId": {
+      "@id": "cosmos:portId",
+      "@type": "xsd:string"
+    },
+    "denom": {
+      "@id": "cosmos:denom",
+      "@type": "xsd:string"
+    },
+    "amount": {
+      "@id": "cosmos:amount",
+      "@type": "xsd:string"
+    },
+    "height": {
+      "@id": "cosmos:height",
+      "@type": "xsd:integer"
+    },
+    "pagination": "cosmos:pagination",
+    "txHash": {
+      "@id": "cosmos:txHash",
+      "@type": "xsd:string"
+    },
+    "inflation": {
+      "@id": "cosmos:inflation",
+      "@type": "xsd:string"
+    },
+    "commission": {
+      "@id": "cosmos:commission",
+      "@type": "xsd:string"
+    },
+    "rewards": "cosmos:rewards",
+    "status": "cosmos:status",
+    "voter": {
+      "@id": "cosmos:voter",
+      "@type": "xsd:string"
+    },
+    "depositor": {
+      "@id": "cosmos:depositor",
+      "@type": "xsd:string"
+    },
+    "chainId": {
+      "@id": "cosmos:chainId",
+      "@type": "xsd:string"
+    }
+  }
+}

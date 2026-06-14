@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK cosmos.upgrade.v1beta1 Schemas",
+  "description": "JSON Schema definitions for the cosmos.upgrade.v1beta1 module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "cosmos.upgrade.v1beta1.ModuleVersion": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "name of the app module"
+        },
+        "version": {
+          "type": "string",
+          "format": "uint64",
+          "title": "consensus version of the app module"
+        }
+      },
+      "description": "ModuleVersion specifies a module and its consensus version."
+    },
+    "cosmos.upgrade.v1beta1.Plan": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Sets the name for the upgrade. This name will be used by the upgraded\nversion of the software to apply any special \"on-upgrade\" commands during\nthe first BeginBlock method after the upgrade is applied. It is also used\nto detect whether a software version can handle a given upgrade. If no\nupgrade handler with this name has been set in the software, it will be\nassumed that the software is out-of-date when the upgrade Time or Height is\nreached and the software will exit."
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Deprecated: Time based upgrades have been deprecated. Time based upgrade logic\nhas been removed from the SDK.\nIf this field is not empty, an error will be thrown."
+        },
+        "height": {
+          "type": "string",
+          "format": "int64",
+          "description": "The height at which the upgrade must be performed."
+        },
+        "info": {
+          "type": "string",
+          "title": "Any application specific upgrade info to be included on-chain\nsuch as a git commit that validators could automatically upgrade to"
+        },
+        "upgradedClientState": {
+          "description": "Deprecated: UpgradedClientState field has been deprecated. IBC upgrade logic has been\nmoved to the IBC module in the sub module 02-client.\nIf this field is not empty, an error will be thrown.",
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+            }
+          },
+          "additionalProperties": {}
+        }
+      },
+      "description": "Plan specifies information about a planned upgrade and when it should occur."
+    },
+    "cosmos.upgrade.v1beta1.QueryAppliedPlanResponse": {
+      "type": "object",
+      "properties": {
+        "height": {
+          "type": "string",
+          "format": "int64",
+          "description": "height is the block height at which the plan was applied."
+        }
+      },
+      "description": "QueryAppliedPlanResponse is the response type for the Query/AppliedPlan RPC\nmethod."
+    },
+    "cosmos.upgrade.v1beta1.QueryAuthorityResponse": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        }
+      },
+      "title": "QueryAuthorityResponse is the response type for Query/Authority"
+    },
+    "cosmos.upgrade.v1beta1.QueryCurrentPlanResponse": {
+      "type": "object",
+      "properties": {
+        "plan": {
+          "description": "plan is the current upgrade plan.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Sets the name for the upgrade. This name will be used by the upgraded\nversion of the software to apply any special \"on-upgrade\" commands during\nthe first BeginBlock method after the upgrade is applied. It is also used\nto detect whether a software version can handle a given upgrade. If no\nupgrade handler with this name has been set in the software, it will be\nassumed that the software is out-of-date when the upgrade Time or Height is\nreached and the software will exit."
+            },
+            "time": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Deprecated: Time based upgrades have been deprecated. Time based upgrade logic\nhas been removed from the SDK.\nIf this field is not empty, an error will be thrown."
+            },
+            "height": {
+              "type": "string",
+              "format": "int64",
+              "description": "The height at which the upgrade must be performed."
+            },
+            "info": {
+              "type": "string",
+              "title": "Any application specific upgrade info to be included on-chain\nsuch as a git commit that validators could automatically upgrade to"
+            },
+            "upgradedClientState": {
+              "description": "Deprecated: UpgradedClientState field has been deprecated. IBC upgrade logic has been\nmoved to the IBC module in the sub module 02-client.\nIf this field is not empty, an error will be thrown.",
+              "type": "object",
+              "properties": {
+                "@type": {
+                  "type": "string",
+                  "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com. As of May 2023, there are no widely used type server\nimplementations and no plans to implement one.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+                }
+              },
+              "additionalProperties": {}
+            }
+          }
+        }
+      },
+      "description": "QueryCurrentPlanResponse is the response type for the Query/CurrentPlan RPC\nmethod."
+    },
+    "cosmos.upgrade.v1beta1.QueryModuleVersionsResponse": {
+      "type": "object",
+      "properties": {
+        "moduleVersions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "name of the app module"
+              },
+              "version": {
+                "type": "string",
+                "format": "uint64",
+                "title": "consensus version of the app module"
+              }
+            },
+            "description": "ModuleVersion specifies a module and its consensus version."
+          },
+          "description": "module_versions is a list of module names with their consensus versions."
+        }
+      },
+      "description": "QueryModuleVersionsResponse is the response type for the Query/ModuleVersions\nRPC method."
+    },
+    "cosmos.upgrade.v1beta1.QueryUpgradedConsensusStateResponse": {
+      "type": "object",
+      "properties": {
+        "upgradedConsensusState": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "description": "QueryUpgradedConsensusStateResponse is the response type for the Query/UpgradedConsensusState\nRPC method."
+    }
+  }
+}

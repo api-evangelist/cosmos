@@ -1,0 +1,284 @@
+{
+  "group": "cosmos/tx/v1beta1",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "POST",
+      "path": "/cosmos/tx/v1beta1/decode",
+      "operationId": "TxDecode",
+      "summary": "TxDecode decodes the transaction.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "description": "TxDecodeRequest is the request type for the Service.TxDecode\nRPC method.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "POST",
+      "path": "/cosmos/tx/v1beta1/decode/amino",
+      "operationId": "TxDecodeAmino",
+      "summary": "TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "description": "TxDecodeAminoRequest is the request type for the Service.TxDecodeAmino\nRPC method.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "POST",
+      "path": "/cosmos/tx/v1beta1/encode",
+      "operationId": "TxEncode",
+      "summary": "TxEncode encodes the transaction.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "description": "TxEncodeRequest is the request type for the Service.TxEncode\nRPC method.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "POST",
+      "path": "/cosmos/tx/v1beta1/encode/amino",
+      "operationId": "TxEncodeAmino",
+      "summary": "TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "description": "TxEncodeAminoRequest is the request type for the Service.TxEncodeAmino\nRPC method.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "POST",
+      "path": "/cosmos/tx/v1beta1/simulate",
+      "operationId": "Simulate",
+      "summary": "Simulate simulates executing a transaction for estimating gas usage.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "description": "SimulateRequest is the request type for the Service.Simulate\nRPC method.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/tx/v1beta1/txs",
+      "operationId": "GetTxsEvent",
+      "summary": "GetTxsEvent fetches txs by event.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "events",
+          "in": "query",
+          "required": false,
+          "description": "events is the list of transaction event type.\nDeprecated post v0.47.x: use query instead, which should contain a valid\nevents query.",
+          "type": "array"
+        },
+        {
+          "name": "pagination.key",
+          "in": "query",
+          "required": false,
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.offset",
+          "in": "query",
+          "required": false,
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.countTotal",
+          "in": "query",
+          "required": false,
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+          "type": "boolean"
+        },
+        {
+          "name": "pagination.reverse",
+          "in": "query",
+          "required": false,
+          "description": "reverse is set to true if results are to be returned in the descending order.",
+          "type": "boolean"
+        },
+        {
+          "name": "orderBy",
+          "in": "query",
+          "required": false,
+          "description": " - ORDER_BY_UNSPECIFIED: ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults\nto ASC in this case.\n - ORDER_BY_ASC: ORDER_BY_ASC defines ascending order\n - ORDER_BY_DESC: ORDER_BY_DESC defines descending order",
+          "type": "string"
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "page is the page number to query, starts at 1. If not provided, will\ndefault to first page.",
+          "type": "string"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "query defines the transaction event query that is proxied to Tendermint's\nTxSearch RPC method. The query must be valid.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "POST",
+      "path": "/cosmos/tx/v1beta1/txs",
+      "operationId": "BroadcastTx",
+      "summary": "BroadcastTx broadcast transaction.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "description": "BroadcastTxRequest is the request type for the Service.BroadcastTxRequest\nRPC method.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/tx/v1beta1/txs/block/{height}",
+      "operationId": "GetBlockWithTxs",
+      "summary": "GetBlockWithTxs fetches a block with decoded txs.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "height",
+          "in": "path",
+          "required": true,
+          "description": "height is the height of the block to query.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.key",
+          "in": "query",
+          "required": false,
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.offset",
+          "in": "query",
+          "required": false,
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.limit",
+          "in": "query",
+          "required": false,
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+          "type": "string"
+        },
+        {
+          "name": "pagination.countTotal",
+          "in": "query",
+          "required": false,
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+          "type": "boolean"
+        },
+        {
+          "name": "pagination.reverse",
+          "in": "query",
+          "required": false,
+          "description": "reverse is set to true if results are to be returned in the descending order.",
+          "type": "boolean"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/tx/v1beta1/txs/{hash}",
+      "operationId": "GetTx",
+      "summary": "GetTx fetches a tx by hash.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [
+        {
+          "name": "hash",
+          "in": "path",
+          "required": true,
+          "description": "hash is the tx hash to query, encoded as a hex string.",
+          "type": "string"
+        }
+      ],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

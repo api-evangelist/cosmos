@@ -1,0 +1,503 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.EvidenceList Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.EvidenceList module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.EvidenceList": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "duplicateVoteEvidence": {
+                "type": "object",
+                "properties": {
+                  "voteA": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "SIGNED_MSG_TYPE_UNKNOWN",
+                          "SIGNED_MSG_TYPE_PREVOTE",
+                          "SIGNED_MSG_TYPE_PRECOMMIT",
+                          "SIGNED_MSG_TYPE_PROPOSAL"
+                        ],
+                        "default": "SIGNED_MSG_TYPE_UNKNOWN",
+                        "description": "SignedMsgType is a type of signed message in the consensus.\n\n - SIGNED_MSG_TYPE_PREVOTE: Votes\n - SIGNED_MSG_TYPE_PROPOSAL: Proposals"
+                      },
+                      "height": {
+                        "type": "string",
+                        "format": "int64"
+                      },
+                      "round": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "blockId": {
+                        "type": "object",
+                        "properties": {
+                          "hash": {
+                            "type": "string",
+                            "format": "byte"
+                          },
+                          "partSetHeader": {
+                            "type": "object",
+                            "properties": {
+                              "total": {
+                                "type": "integer",
+                                "format": "int64"
+                              },
+                              "hash": {
+                                "type": "string",
+                                "format": "byte"
+                              }
+                            },
+                            "title": "PartsetHeader"
+                          }
+                        },
+                        "title": "BlockID",
+                        "description": "zero if vote is nil."
+                      },
+                      "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "format": "byte"
+                      },
+                      "validatorIndex": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "signature": {
+                        "type": "string",
+                        "format": "byte",
+                        "description": "Vote signature by the validator if they participated in consensus for the\nassociated block."
+                      },
+                      "extension": {
+                        "type": "string",
+                        "format": "byte",
+                        "description": "Vote extension provided by the application. Only valid for precommit\nmessages."
+                      },
+                      "extensionSignature": {
+                        "type": "string",
+                        "format": "byte",
+                        "description": "Vote extension signature by the validator if they participated in\nconsensus for the associated block.\nOnly valid for precommit messages."
+                      }
+                    },
+                    "description": "Vote represents a prevote or precommit vote from validators for\nconsensus."
+                  },
+                  "voteB": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "SIGNED_MSG_TYPE_UNKNOWN",
+                          "SIGNED_MSG_TYPE_PREVOTE",
+                          "SIGNED_MSG_TYPE_PRECOMMIT",
+                          "SIGNED_MSG_TYPE_PROPOSAL"
+                        ],
+                        "default": "SIGNED_MSG_TYPE_UNKNOWN",
+                        "description": "SignedMsgType is a type of signed message in the consensus.\n\n - SIGNED_MSG_TYPE_PREVOTE: Votes\n - SIGNED_MSG_TYPE_PROPOSAL: Proposals"
+                      },
+                      "height": {
+                        "type": "string",
+                        "format": "int64"
+                      },
+                      "round": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "blockId": {
+                        "type": "object",
+                        "properties": {
+                          "hash": {
+                            "type": "string",
+                            "format": "byte"
+                          },
+                          "partSetHeader": {
+                            "type": "object",
+                            "properties": {
+                              "total": {
+                                "type": "integer",
+                                "format": "int64"
+                              },
+                              "hash": {
+                                "type": "string",
+                                "format": "byte"
+                              }
+                            },
+                            "title": "PartsetHeader"
+                          }
+                        },
+                        "title": "BlockID",
+                        "description": "zero if vote is nil."
+                      },
+                      "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "format": "byte"
+                      },
+                      "validatorIndex": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "signature": {
+                        "type": "string",
+                        "format": "byte",
+                        "description": "Vote signature by the validator if they participated in consensus for the\nassociated block."
+                      },
+                      "extension": {
+                        "type": "string",
+                        "format": "byte",
+                        "description": "Vote extension provided by the application. Only valid for precommit\nmessages."
+                      },
+                      "extensionSignature": {
+                        "type": "string",
+                        "format": "byte",
+                        "description": "Vote extension signature by the validator if they participated in\nconsensus for the associated block.\nOnly valid for precommit messages."
+                      }
+                    },
+                    "description": "Vote represents a prevote or precommit vote from validators for\nconsensus."
+                  },
+                  "totalVotingPower": {
+                    "type": "string",
+                    "format": "int64"
+                  },
+                  "validatorPower": {
+                    "type": "string",
+                    "format": "int64"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "description": "DuplicateVoteEvidence contains evidence of a validator signed two conflicting votes."
+              },
+              "lightClientAttackEvidence": {
+                "type": "object",
+                "properties": {
+                  "conflictingBlock": {
+                    "type": "object",
+                    "properties": {
+                      "signedHeader": {
+                        "type": "object",
+                        "properties": {
+                          "header": {
+                            "type": "object",
+                            "properties": {
+                              "version": {
+                                "title": "basic block info",
+                                "type": "object",
+                                "properties": {
+                                  "block": {
+                                    "type": "string",
+                                    "format": "uint64"
+                                  },
+                                  "app": {
+                                    "type": "string",
+                                    "format": "uint64"
+                                  }
+                                },
+                                "description": "Consensus captures the consensus rules for processing a block in the blockchain,\nincluding all blockchain data structures and the rules of the application's\nstate transition machine."
+                              },
+                              "chainId": {
+                                "type": "string"
+                              },
+                              "height": {
+                                "type": "string",
+                                "format": "int64"
+                              },
+                              "time": {
+                                "type": "string",
+                                "format": "date-time"
+                              },
+                              "lastBlockId": {
+                                "type": "object",
+                                "properties": {
+                                  "hash": {
+                                    "type": "string",
+                                    "format": "byte"
+                                  },
+                                  "partSetHeader": {
+                                    "type": "object",
+                                    "properties": {
+                                      "total": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "hash": {
+                                        "type": "string",
+                                        "format": "byte"
+                                      }
+                                    },
+                                    "title": "PartsetHeader"
+                                  }
+                                },
+                                "title": "BlockID"
+                              },
+                              "lastCommitHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "description": "commit from validators from the last block",
+                                "title": "hashes of block data"
+                              },
+                              "dataHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "title": "transactions"
+                              },
+                              "validatorsHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "description": "validators for the current block",
+                                "title": "hashes from the app output from the prev block"
+                              },
+                              "nextValidatorsHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "title": "validators for the next block"
+                              },
+                              "consensusHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "title": "consensus params for current block"
+                              },
+                              "appHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "title": "state after txs from the previous block"
+                              },
+                              "lastResultsHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "title": "root hash of all results from the txs from the previous block"
+                              },
+                              "evidenceHash": {
+                                "type": "string",
+                                "format": "byte",
+                                "description": "evidence included in the block",
+                                "title": "consensus info"
+                              },
+                              "proposerAddress": {
+                                "type": "string",
+                                "format": "byte",
+                                "title": "original proposer of the block"
+                              }
+                            },
+                            "description": "Header defines the structure of a block header."
+                          },
+                          "commit": {
+                            "type": "object",
+                            "properties": {
+                              "height": {
+                                "type": "string",
+                                "format": "int64"
+                              },
+                              "round": {
+                                "type": "integer",
+                                "format": "int32"
+                              },
+                              "blockId": {
+                                "type": "object",
+                                "properties": {
+                                  "hash": {
+                                    "type": "string",
+                                    "format": "byte"
+                                  },
+                                  "partSetHeader": {
+                                    "type": "object",
+                                    "properties": {
+                                      "total": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "hash": {
+                                        "type": "string",
+                                        "format": "byte"
+                                      }
+                                    },
+                                    "title": "PartsetHeader"
+                                  }
+                                },
+                                "title": "BlockID"
+                              },
+                              "signatures": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "blockIdFlag": {
+                                      "type": "string",
+                                      "enum": [
+                                        "BLOCK_ID_FLAG_UNKNOWN",
+                                        "BLOCK_ID_FLAG_ABSENT",
+                                        "BLOCK_ID_FLAG_COMMIT",
+                                        "BLOCK_ID_FLAG_NIL"
+                                      ],
+                                      "default": "BLOCK_ID_FLAG_UNKNOWN",
+                                      "description": "- BLOCK_ID_FLAG_UNKNOWN: indicates an error condition\n - BLOCK_ID_FLAG_ABSENT: the vote was not received\n - BLOCK_ID_FLAG_COMMIT: voted for the block that received the majority\n - BLOCK_ID_FLAG_NIL: voted for nil",
+                                      "title": "BlockIdFlag indicates which BlockID the signature is for"
+                                    },
+                                    "validatorAddress": {
+                                      "type": "string",
+                                      "format": "byte"
+                                    },
+                                    "timestamp": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "signature": {
+                                      "type": "string",
+                                      "format": "byte"
+                                    }
+                                  },
+                                  "description": "CommitSig is a part of the Vote included in a Commit."
+                                }
+                              }
+                            },
+                            "description": "Commit contains the evidence that a block was committed by a set of validators."
+                          }
+                        }
+                      },
+                      "validatorSet": {
+                        "type": "object",
+                        "properties": {
+                          "validators": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "address": {
+                                  "type": "string",
+                                  "format": "byte"
+                                },
+                                "pubKey": {
+                                  "type": "object",
+                                  "properties": {
+                                    "ed25519": {
+                                      "type": "string",
+                                      "format": "byte"
+                                    },
+                                    "secp256k1": {
+                                      "type": "string",
+                                      "format": "byte"
+                                    }
+                                  },
+                                  "title": "PublicKey defines the keys available for use with Validators"
+                                },
+                                "votingPower": {
+                                  "type": "string",
+                                  "format": "int64"
+                                },
+                                "proposerPriority": {
+                                  "type": "string",
+                                  "format": "int64"
+                                }
+                              }
+                            }
+                          },
+                          "proposer": {
+                            "type": "object",
+                            "properties": {
+                              "address": {
+                                "type": "string",
+                                "format": "byte"
+                              },
+                              "pubKey": {
+                                "type": "object",
+                                "properties": {
+                                  "ed25519": {
+                                    "type": "string",
+                                    "format": "byte"
+                                  },
+                                  "secp256k1": {
+                                    "type": "string",
+                                    "format": "byte"
+                                  }
+                                },
+                                "title": "PublicKey defines the keys available for use with Validators"
+                              },
+                              "votingPower": {
+                                "type": "string",
+                                "format": "int64"
+                              },
+                              "proposerPriority": {
+                                "type": "string",
+                                "format": "int64"
+                              }
+                            }
+                          },
+                          "totalVotingPower": {
+                            "type": "string",
+                            "format": "int64"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "commonHeight": {
+                    "type": "string",
+                    "format": "int64"
+                  },
+                  "byzantineValidators": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "address": {
+                          "type": "string",
+                          "format": "byte"
+                        },
+                        "pubKey": {
+                          "type": "object",
+                          "properties": {
+                            "ed25519": {
+                              "type": "string",
+                              "format": "byte"
+                            },
+                            "secp256k1": {
+                              "type": "string",
+                              "format": "byte"
+                            }
+                          },
+                          "title": "PublicKey defines the keys available for use with Validators"
+                        },
+                        "votingPower": {
+                          "type": "string",
+                          "format": "int64"
+                        },
+                        "proposerPriority": {
+                          "type": "string",
+                          "format": "int64"
+                        }
+                      }
+                    }
+                  },
+                  "totalVotingPower": {
+                    "type": "string",
+                    "format": "int64"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "description": "LightClientAttackEvidence contains evidence of a set of validators attempting to mislead a light client."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

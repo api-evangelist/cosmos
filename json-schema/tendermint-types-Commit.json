@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.Commit Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.Commit module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.Commit": {
+      "type": "object",
+      "properties": {
+        "height": {
+          "type": "string",
+          "format": "int64"
+        },
+        "round": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "blockId": {
+          "type": "object",
+          "properties": {
+            "hash": {
+              "type": "string",
+              "format": "byte"
+            },
+            "partSetHeader": {
+              "type": "object",
+              "properties": {
+                "total": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "hash": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              },
+              "title": "PartsetHeader"
+            }
+          },
+          "title": "BlockID"
+        },
+        "signatures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "blockIdFlag": {
+                "type": "string",
+                "enum": [
+                  "BLOCK_ID_FLAG_UNKNOWN",
+                  "BLOCK_ID_FLAG_ABSENT",
+                  "BLOCK_ID_FLAG_COMMIT",
+                  "BLOCK_ID_FLAG_NIL"
+                ],
+                "default": "BLOCK_ID_FLAG_UNKNOWN",
+                "description": "- BLOCK_ID_FLAG_UNKNOWN: indicates an error condition\n - BLOCK_ID_FLAG_ABSENT: the vote was not received\n - BLOCK_ID_FLAG_COMMIT: voted for the block that received the majority\n - BLOCK_ID_FLAG_NIL: voted for nil",
+                "title": "BlockIdFlag indicates which BlockID the signature is for"
+              },
+              "validatorAddress": {
+                "type": "string",
+                "format": "byte"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "signature": {
+                "type": "string",
+                "format": "byte"
+              }
+            },
+            "description": "CommitSig is a part of the Vote included in a Commit."
+          }
+        }
+      },
+      "description": "Commit contains the evidence that a block was committed by a set of validators."
+    }
+  }
+}

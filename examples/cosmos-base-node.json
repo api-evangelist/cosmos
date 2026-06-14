@@ -1,0 +1,30 @@
+{
+  "group": "cosmos/base/node",
+  "baseURL": "https://lcd.cosmos.network",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cosmos/base/node/v1beta1/config",
+      "operationId": "Config",
+      "summary": "Config queries for the operator configuration.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    },
+    {
+      "method": "GET",
+      "path": "/cosmos/base/node/v1beta1/status",
+      "operationId": "Status",
+      "summary": "Status queries for the node status.",
+      "tags": [
+        "Service"
+      ],
+      "parameters": [],
+      "example_request": {},
+      "example_response": {}
+    }
+  ]
+}

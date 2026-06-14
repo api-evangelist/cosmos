@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.types.BlockID Schemas",
+  "description": "JSON Schema definitions for the tendermint.types.BlockID module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.types.BlockID": {
+      "type": "object",
+      "properties": {
+        "hash": {
+          "type": "string",
+          "format": "byte"
+        },
+        "partSetHeader": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "hash": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "title": "PartsetHeader"
+        }
+      },
+      "title": "BlockID"
+    }
+  }
+}

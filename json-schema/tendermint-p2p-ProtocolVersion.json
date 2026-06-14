@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.p2p.ProtocolVersion Schemas",
+  "description": "JSON Schema definitions for the tendermint.p2p.ProtocolVersion module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.p2p.ProtocolVersion": {
+      "type": "object",
+      "properties": {
+        "p2p": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "block": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "app": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    }
+  }
+}

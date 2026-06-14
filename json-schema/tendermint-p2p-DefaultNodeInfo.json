@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cosmos SDK tendermint.p2p.DefaultNodeInfo Schemas",
+  "description": "JSON Schema definitions for the tendermint.p2p.DefaultNodeInfo module of the Cosmos SDK gRPC-gateway REST API.",
+  "definitions": {
+    "tendermint.p2p.DefaultNodeInfo": {
+      "type": "object",
+      "properties": {
+        "protocolVersion": {
+          "type": "object",
+          "properties": {
+            "p2p": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "block": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "app": {
+              "type": "string",
+              "format": "uint64"
+            }
+          }
+        },
+        "defaultNodeId": {
+          "type": "string"
+        },
+        "listenAddr": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "channels": {
+          "type": "string",
+          "format": "byte"
+        },
+        "moniker": {
+          "type": "string"
+        },
+        "other": {
+          "type": "object",
+          "properties": {
+            "txIndex": {
+              "type": "string"
+            },
+            "rpcAddress": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
