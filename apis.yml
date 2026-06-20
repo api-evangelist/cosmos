@@ -8,7 +8,7 @@ description: >-
   staking delegations, IBC transfers, minting, distribution, and ABCI app data.
   The Cosmos Hub (cosmoshub-4) is the flagship chain; the same API surface is
   shared by 150+ chains in the ecosystem.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/apis.yml
 version: "0.19"
 created: "2026-06-13"
@@ -29,7 +29,7 @@ apis:
     description: >-
       Query authentication-related data for accounts on a Cosmos SDK chain,
       including account information, parameters, and address lookups.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/auth
     baseURL: https://lcd.cosmos.network
     tags:
@@ -51,7 +51,7 @@ apis:
       Query account balances, total coin supply, denomination metadata, and
       denom ownership across a Cosmos SDK chain. Supports both individual
       balance lookups and aggregate supply queries.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/bank
     baseURL: https://lcd.cosmos.network
     tags:
@@ -74,7 +74,7 @@ apis:
       Query proof-of-stake data including validators, delegations, unbonding
       delegations, redelegations, staking parameters, and pool information.
       Supports querying by delegator address, validator address, and more.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/staking
     baseURL: https://lcd.cosmos.network
     tags:
@@ -97,7 +97,7 @@ apis:
       Query on-chain governance data including proposals, votes, deposits, and
       governance parameters. Supports filtering proposals by status and querying
       individual voter and depositor records.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/gov
     baseURL: https://lcd.cosmos.network
     tags:
@@ -119,7 +119,7 @@ apis:
     description: >-
       Query staking reward distribution data including delegator rewards,
       validator commission, community pool balances, and distribution parameters.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/distribution
     baseURL: https://lcd.cosmos.network
     tags:
@@ -141,7 +141,7 @@ apis:
     description: >-
       Query the minting module for inflation parameters, current inflation rate,
       annual provisions, and minting module parameters for a Cosmos SDK chain.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/mint
     baseURL: https://lcd.cosmos.network
     tags:
@@ -163,7 +163,7 @@ apis:
       Query validator slashing data including signing information, slashing
       parameters, and signing info for all validators. Used for monitoring
       validator uptime and penalty state.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/modules/slashing
     baseURL: https://lcd.cosmos.network
     tags:
@@ -186,7 +186,7 @@ apis:
       Query Inter-Blockchain Communication (IBC) data including channels, clients,
       connections, and packet commitments. Enables cross-chain transfer queries
       and IBC state inspection across all 150+ chains in the Cosmos ecosystem.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://ibc.cosmos.network/v10/
     baseURL: https://lcd.cosmos.network
     tags:
@@ -210,7 +210,7 @@ apis:
       Query and broadcast transactions on a Cosmos SDK chain. Supports fetching
       transaction details by hash, searching transactions by event filters,
       simulating transaction gas, and broadcasting signed transactions.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest
     baseURL: https://lcd.cosmos.network
     tags:
@@ -233,7 +233,7 @@ apis:
       Query CometBFT (formerly Tendermint) consensus engine data including block
       information, validator sets, consensus state, network status, and ABCI
       application data. Exposed on port 26657 independent of the Cosmos SDK LCD.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.cosmos.network/cometbft/latest/docs/README
     baseURL: https://rpc.cosmos.network
     tags:
