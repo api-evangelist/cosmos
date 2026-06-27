@@ -263,7 +263,7 @@ common:
     url: https://cosmos.github.io/cosmos-sdk/openapi.html
   - type: SwaggerUI
     url: https://localhost:1317/swagger
-  - type: Forum
+  - type: Forums
     url: https://forum.cosmos.network
   - type: Discord
     url: https://discord.gg/interchain
