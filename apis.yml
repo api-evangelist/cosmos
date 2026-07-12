@@ -253,6 +253,8 @@ apis:
         email: ""
 
 common:
+  - type: DomainSecurity
+    url: security/cosmos-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/cosmos
   - type: GitHubRepository
