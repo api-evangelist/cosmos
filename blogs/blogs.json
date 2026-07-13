@@ -2,11 +2,13 @@
   "repo": "cosmos",
   "feeds": [
     {
-      "source": "https://blog.cosmos.network",
+      "source": "https://discord.gg/interchain",
+      "feed_url": "https://discord.gg/interchain",
+      "title": "",
       "saved": 0,
-      "error": "fetch failed (no output) on all attempts"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:34:09Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
