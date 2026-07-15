@@ -1,0 +1,1142 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 109
+  by_action_class:
+    connected: 103
+    acting: 6
+  by_consequence:
+    read: 103
+    write: 6
+  human_in_the_loop_required: 0
+operations:
+- path: /cosmos/auth/v1beta1/account_info/{address}
+  method: get
+  operationId: AccountInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/accounts
+  method: get
+  operationId: Accounts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/accounts/{address}
+  method: get
+  operationId: Account
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/address_by_id/{accountId}
+  method: get
+  operationId: AccountAddressByID
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/bech32
+  method: get
+  operationId: Bech32Prefix
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/bech32/{addressBytes}
+  method: get
+  operationId: AddressBytesToString
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/bech32/{addressString}
+  method: get
+  operationId: AddressStringToBytes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/module_accounts
+  method: get
+  operationId: ModuleAccounts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/module_accounts/{name}
+  method: get
+  operationId: ModuleAccountByName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/auth/v1beta1/params
+  method: get
+  operationId: AuthParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/authz/v1beta1/grants
+  method: get
+  operationId: Grants
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/authz/v1beta1/grants/grantee/{grantee}
+  method: get
+  operationId: GranteeGrants
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/authz/v1beta1/grants/granter/{granter}
+  method: get
+  operationId: GranterGrants
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/balances/{address}
+  method: get
+  operationId: AllBalances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/balances/{address}/by_denom
+  method: get
+  operationId: Balance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/denom_owners/{denom}
+  method: get
+  operationId: DenomOwners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/denom_owners_by_query
+  method: get
+  operationId: DenomOwnersByQuery
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/denoms_metadata
+  method: get
+  operationId: DenomsMetadata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/denoms_metadata/{denom}
+  method: get
+  operationId: DenomMetadata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/denoms_metadata_by_query_string
+  method: get
+  operationId: DenomMetadataByQueryString
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/params
+  method: get
+  operationId: BankParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/send_enabled
+  method: get
+  operationId: SendEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/spendable_balances/{address}
+  method: get
+  operationId: SpendableBalances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/spendable_balances/{address}/by_denom
+  method: get
+  operationId: SpendableBalanceByDenom
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/supply
+  method: get
+  operationId: TotalSupply
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/bank/v1beta1/supply/by_denom
+  method: get
+  operationId: SupplyOf
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/node/v1beta1/config
+  method: get
+  operationId: Config
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/node/v1beta1/status
+  method: get
+  operationId: Status
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/abci_query
+  method: get
+  operationId: ABCIQuery
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/block_results/latest
+  method: get
+  operationId: GetLatestBlockResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/block_results/{height}
+  method: get
+  operationId: GetBlockResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/blocks/latest
+  method: get
+  operationId: GetLatestBlock
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/blocks/{height}
+  method: get
+  operationId: GetBlockByHeight
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/node_info
+  method: get
+  operationId: GetNodeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/syncing
+  method: get
+  operationId: GetSyncing
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/validatorsets/latest
+  method: get
+  operationId: GetLatestValidatorSet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/base/tendermint/v1beta1/validatorsets/{height}
+  method: get
+  operationId: GetValidatorSetByHeight
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/consensus/v1/params
+  method: get
+  operationId: ConsensusParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/community_pool
+  method: get
+  operationId: CommunityPool
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/rewards
+  method: get
+  operationId: DelegationTotalRewards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/rewards/{validatorAddress}
+  method: get
+  operationId: DelegationRewards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/starting_info/{validatorAddress}
+  method: get
+  operationId: DelegatorStartingInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/validators
+  method: get
+  operationId: DelegatorValidators
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/delegators/{delegatorAddress}/withdraw_address
+  method: get
+  operationId: DelegatorWithdrawAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/params
+  method: get
+  operationId: DistributionParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/validators/{validatorAddress}
+  method: get
+  operationId: ValidatorDistributionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/validators/{validatorAddress}/commission
+  method: get
+  operationId: ValidatorCommission
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/validators/{validatorAddress}/current_rewards
+  method: get
+  operationId: ValidatorCurrentRewards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/validators/{validatorAddress}/historical_rewards/{period}
+  method: get
+  operationId: ValidatorHistoricalRewards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/validators/{validatorAddress}/outstanding_rewards
+  method: get
+  operationId: ValidatorOutstandingRewards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/distribution/v1beta1/validators/{validatorAddress}/slashes
+  method: get
+  operationId: ValidatorSlashes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/epochs/v1beta1/current_epoch
+  method: get
+  operationId: CurrentEpoch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/epochs/v1beta1/epochs
+  method: get
+  operationId: EpochInfos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/evidence/v1beta1/evidence
+  method: get
+  operationId: AllEvidence
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/evidence/v1beta1/evidence/{hash}
+  method: get
+  operationId: Evidence
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
+  method: get
+  operationId: Allowance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/feegrant/v1beta1/allowances/{grantee}
+  method: get
+  operationId: Allowances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/feegrant/v1beta1/issued/{granter}
+  method: get
+  operationId: AllowancesByGranter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/constitution
+  method: get
+  operationId: Constitution
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/params/{paramsType}
+  method: get
+  operationId: GovV1Params
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals
+  method: get
+  operationId: GovV1Proposal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals/{proposalId}
+  method: get
+  operationId: GovV1Proposal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals/{proposalId}/deposits
+  method: get
+  operationId: GovV1Deposit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals/{proposalId}/deposits/{depositor}
+  method: get
+  operationId: GovV1Deposit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals/{proposalId}/tally
+  method: get
+  operationId: GovV1TallyResult
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals/{proposalId}/votes
+  method: get
+  operationId: GovV1Votes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1/proposals/{proposalId}/votes/{voter}
+  method: get
+  operationId: GovV1Vote
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/params/{paramsType}
+  method: get
+  operationId: GovParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals
+  method: get
+  operationId: Proposals
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals/{proposalId}
+  method: get
+  operationId: Proposal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals/{proposalId}/deposits
+  method: get
+  operationId: Deposits
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals/{proposalId}/deposits/{depositor}
+  method: get
+  operationId: Deposit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals/{proposalId}/tally
+  method: get
+  operationId: TallyResult
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals/{proposalId}/votes
+  method: get
+  operationId: Votes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/gov/v1beta1/proposals/{proposalId}/votes/{voter}
+  method: get
+  operationId: Vote
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/mint/v1beta1/annual_provisions
+  method: get
+  operationId: AnnualProvisions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/mint/v1beta1/inflation
+  method: get
+  operationId: Inflation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/mint/v1beta1/params
+  method: get
+  operationId: MintParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/slashing/v1beta1/params
+  method: get
+  operationId: SlashingParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/slashing/v1beta1/signing_infos
+  method: get
+  operationId: SigningInfos
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/slashing/v1beta1/signing_infos/{consAddress}
+  method: get
+  operationId: SigningInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/delegations/{delegatorAddr}
+  method: get
+  operationId: DelegatorDelegations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/delegators/{delegatorAddr}/redelegations
+  method: get
+  operationId: Redelegations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/delegators/{delegatorAddr}/unbonding_delegations
+  method: get
+  operationId: DelegatorUnbondingDelegations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/delegators/{delegatorAddr}/validators
+  method: get
+  operationId: StakingDelegatorValidators
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/delegators/{delegatorAddr}/validators/{validatorAddr}
+  method: get
+  operationId: DelegatorValidator
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/historical_info/{height}
+  method: get
+  operationId: HistoricalInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/params
+  method: get
+  operationId: StakingParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/pool
+  method: get
+  operationId: Pool
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/validators
+  method: get
+  operationId: Validators
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/validators/{validatorAddr}
+  method: get
+  operationId: Validator
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/validators/{validatorAddr}/delegations
+  method: get
+  operationId: ValidatorDelegations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/validators/{validatorAddr}/delegations/{delegatorAddr}
+  method: get
+  operationId: Delegation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/validators/{validatorAddr}/delegations/{delegatorAddr}/unbonding_delegation
+  method: get
+  operationId: UnbondingDelegation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/staking/v1beta1/validators/{validatorAddr}/unbonding_delegations
+  method: get
+  operationId: ValidatorUnbondingDelegations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/tx/v1beta1/decode
+  method: post
+  operationId: TxDecode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cosmos/tx/v1beta1/decode/amino
+  method: post
+  operationId: TxDecodeAmino
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cosmos/tx/v1beta1/encode
+  method: post
+  operationId: TxEncode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cosmos/tx/v1beta1/encode/amino
+  method: post
+  operationId: TxEncodeAmino
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cosmos/tx/v1beta1/simulate
+  method: post
+  operationId: Simulate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cosmos/tx/v1beta1/txs
+  method: get
+  operationId: GetTxsEvent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/tx/v1beta1/txs
+  method: post
+  operationId: BroadcastTx
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cosmos/tx/v1beta1/txs/block/{height}
+  method: get
+  operationId: GetBlockWithTxs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/tx/v1beta1/txs/{hash}
+  method: get
+  operationId: GetTx
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/upgrade/v1beta1/applied_plan/{name}
+  method: get
+  operationId: AppliedPlan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/upgrade/v1beta1/authority
+  method: get
+  operationId: Authority
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/upgrade/v1beta1/current_plan
+  method: get
+  operationId: CurrentPlan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/upgrade/v1beta1/module_versions
+  method: get
+  operationId: ModuleVersions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cosmos/upgrade/v1beta1/upgraded_consensus_state/{lastHeight}
+  method: get
+  operationId: UpgradedConsensusState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
