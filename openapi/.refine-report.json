@@ -1,0 +1,16 @@
+{
+  "provider": "cosmos",
+  "sources": [
+    "cosmos-query-api-openapi.yml",
+    "cosmos-service-api-openapi.yml"
+  ],
+  "outputs": [
+    "cosmos-query-api-openapi.yml",
+    "cosmos-service-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
