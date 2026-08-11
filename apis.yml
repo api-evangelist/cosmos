@@ -97,6 +97,15 @@ apis:
   - type: Documentation
     url: https://docs.cosmos.network/cometbft/latest/docs/README
 common:
+  - type: IssueTracker
+    url: https://github.com/cosmos/cosmos-sdk/issues
+  - type: Releases
+    url: https://github.com/cosmos/cosmos-sdk/releases
+  - type: SecurityPolicy
+    url: https://github.com/cosmos/cosmos-sdk/blob/main/SECURITY.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/cosmos/cosmos-sdk/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/cosmos-agentic-access.yml
   - type: DomainSecurity
