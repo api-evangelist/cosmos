@@ -1,13 +1,10 @@
 name: Cosmos
-description: >-
-  Cosmos is an interoperable blockchain ecosystem providing a modular framework
-  (Cosmos SDK) for building sovereign, high-performance application-specific
-  blockchains. The Cosmos SDK exposes LCD (Light Client Daemon) REST APIs on
-  port 1317, generated automatically via gRPC-gateway from Protobuf definitions.
-  These endpoints cover accounts, balances, transactions, governance proposals,
-  staking delegations, IBC transfers, minting, distribution, and ABCI app data.
-  The Cosmos Hub (cosmoshub-4) is the flagship chain; the same API surface is
-  shared by 150+ chains in the ecosystem.
+description: Cosmos is an interoperable blockchain ecosystem providing a modular framework (Cosmos SDK)
+  for building sovereign, high-performance application-specific blockchains. The Cosmos SDK exposes LCD
+  (Light Client Daemon) REST APIs on port 1317, generated automatically via gRPC-gateway from Protobuf
+  definitions. These endpoints cover accounts, balances, transactions, governance proposals, staking delegations,
+  IBC transfers, minting, distribution, and ABCI app data. The Cosmos Hub (cosmoshub-4) is the flagship
+  chain; the same API surface is shared by 150+ chains in the ecosystem.
 deliveryModel:
   model: open-core
   license: Apache-2.0
@@ -36,19 +33,18 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cosmos.png
 url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/apis.yml
-version: "0.19"
-created: "2026-06-13"
-modified: "2026-06-13"
+version: '0.19'
+created: '2026-06-13'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 tags:
-  - Blockchain
-  - Cosmos
-  - IBC
-  - Staking
-  - Governance
-  - DeFi
-  - Web3
-
+- Blockchain
+- Cosmos
+- IBC
+- Staking
+- Governance
+- DeFi
+- Web3
 apis:
 - aid: cosmos:cosmos-query-api
   name: Cosmos Query API
@@ -111,46 +107,47 @@ apis:
   - type: Documentation
     url: https://docs.cosmos.network/cometbft/latest/docs/README
 common:
-  - type: IssueTracker
-    url: https://github.com/cosmos/cosmos-sdk/issues
-  - type: Releases
-    url: https://github.com/cosmos/cosmos-sdk/releases
-  - type: SecurityPolicy
-    url: https://github.com/cosmos/cosmos-sdk/blob/main/SECURITY.md
-  - type: License
-    name: Apache-2.0
-    url: https://github.com/cosmos/cosmos-sdk/blob/main/LICENSE
-  - type: AgenticAccess
-    url: agentic-access/cosmos-agentic-access.yml
-  - type: DomainSecurity
-    url: security/cosmos-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/cosmos
-  - type: GitHubRepository
-    url: https://github.com/cosmos/cosmos-sdk
-  - type: Documentation
-    url: https://docs.cosmos.network
-  - type: OpenAPI
-    url: https://cosmos.github.io/cosmos-sdk/openapi.html
-  - type: SwaggerUI
-    url: https://localhost:1317/swagger
-  - type: Forums
-    url: https://forum.cosmos.network
-  - type: Discord
-    url: https://discord.gg/interchain
-  - type: Blog
-    url: https://blog.cosmos.network
-  - type: X
-    url: https://x.com/cosmosecosystem
-  - type: TermsOfService
-    url: https://cosmos.network/privacy
-  - type: Plans
-    url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/plans/plans.yml
-  - type: RateLimits
-    url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/rate-limits/rate-limits.yml
-  - type: FinOps
-    url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/finops/finops.yml
-
+- type: Website
+  url: https://cosmos.network
+- type: IssueTracker
+  url: https://github.com/cosmos/cosmos-sdk/issues
+- type: Releases
+  url: https://github.com/cosmos/cosmos-sdk/releases
+- type: SecurityPolicy
+  url: https://github.com/cosmos/cosmos-sdk/blob/main/SECURITY.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/cosmos/cosmos-sdk/blob/main/LICENSE
+- type: AgenticAccess
+  url: agentic-access/cosmos-agentic-access.yml
+- type: DomainSecurity
+  url: security/cosmos-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/cosmos
+- type: GitHubRepository
+  url: https://github.com/cosmos/cosmos-sdk
+- type: Documentation
+  url: https://docs.cosmos.network
+- type: OpenAPI
+  url: https://cosmos.github.io/cosmos-sdk/openapi.html
+- type: SwaggerUI
+  url: https://localhost:1317/swagger
+- type: Forums
+  url: https://forum.cosmos.network
+- type: Discord
+  url: https://discord.gg/interchain
+- type: Blog
+  url: https://blog.cosmos.network
+- type: X
+  url: https://x.com/cosmosecosystem
+- type: TermsOfService
+  url: https://cosmos.network/privacy
+- type: Plans
+  url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/plans/plans.yml
+- type: RateLimits
+  url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/rate-limits/rate-limits.yml
+- type: FinOps
+  url: https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/finops/finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
