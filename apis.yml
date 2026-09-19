@@ -82,6 +82,8 @@ apis:
   humanURL: https://docs.cosmos.network/sdk/latest/modules/auth
   baseURL: https://lcd.cosmos.network
   tags:
+  - Services
+  tags_raw:
   - Service
   properties:
   - type: OpenAPI
