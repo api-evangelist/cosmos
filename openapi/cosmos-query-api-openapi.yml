@@ -4579,7 +4579,7 @@ paths:
   /cosmos/gov/v1/proposals/{proposalId}:
     get:
       summary: Proposal queries proposal details based on ProposalID
-      operationId: GovV1Proposal
+      operationId: getCosmosGovV1ProposalsByProposalId
       responses:
         '200':
           description: A successful response.
@@ -4725,6 +4725,8 @@ paths:
           format: uint64
       tags:
       - Query
+      x-operation-id-source: normalized
+      x-operation-id-original: GovV1Proposal
   /cosmos/gov/v1/proposals/{proposalId}/deposits:
     get:
       summary: Deposits queries all deposits of a single proposal
@@ -4872,7 +4874,7 @@ paths:
   /cosmos/gov/v1/proposals/{proposalId}/deposits/{depositor}:
     get:
       summary: Deposit queries single deposit information based on proposalID, depositAddr
-      operationId: GovV1Deposit
+      operationId: getCosmosGovV1ProposalsByProposalIdDepositsByDepositor
       responses:
         '200':
           description: A successful response.
@@ -4947,6 +4949,8 @@ paths:
           type: string
       tags:
       - Query
+      x-operation-id-source: normalized
+      x-operation-id-original: GovV1Deposit
   /cosmos/gov/v1/proposals/{proposalId}/tally:
     get:
       summary: TallyResult queries the tally of a proposal vote
