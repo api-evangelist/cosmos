@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.cosmos.network/sdk/latest/api-reference/rest/openapi.yaml",
+ "requested_url": "https://docs.cosmos.network/sdk/latest/api-reference/rest/openapi.yaml",
+ "status": 200,
+ "content_type": "text/yaml",
+ "bytes": 2070466,
+ "sha256": "c0a1096098302381f954ba24b016bc3603d0f997b58d601b0045d516fedd931f",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.991), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
