@@ -5434,3 +5434,9 @@ components:
 
                 additional metadata, emitted only by processing the messages.'
       description: GetTxResponse is the response type for the Service.GetTx method.
+x-provenance:
+  method: harvested
+  publisher: Cosmos
+  source: https://docs.cosmos.network/sdk/latest/api-reference/rest/openapi.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
