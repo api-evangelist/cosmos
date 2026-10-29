@@ -1,4 +1,4 @@
-# Cosmos (cosmos)
+# Cosmos
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,232 +66,183 @@
 
 Cosmos is an interoperable blockchain ecosystem providing a modular framework (Cosmos SDK) for building sovereign, high-performance application-specific blockchains. The Cosmos SDK exposes LCD (Light Client Daemon) REST APIs on port 1317, generated automatically via gRPC-gateway from Protobuf definitions. These endpoints cover accounts, balances, transactions, governance proposals, staking delegations, IBC transfers, minting, distribution, and ABCI app data. The Cosmos Hub (cosmoshub-4) is the flagship chain; the same API surface is shared by 150+ chains in the ecosystem.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/apis.yml)
+**Areas:** Blockchain · Cosmos · IBC · Staking · Governance · DeFi · Web3
 
-## Tags
+## Cosmos on APIs.io
 
-- Blockchain
-- Cosmos
-- IBC
-- Staking
-- Governance
-- DeFi
-- Web3
+Everything profiled for Cosmos is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cosmos/](https://apis.io/providers/cosmos/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (2)
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+- [Cosmos Query API](https://apis.io/apis/cosmos/cosmos-query-api/) — The Query API from Cosmos — 89 operation(s) for query.
+- [Cosmos Service API](https://apis.io/apis/cosmos/cosmos-service-api/) — The Service API from Cosmos — 19 operation(s) for service.
 
-## APIs
+### Published properties
 
-### Cosmos Auth API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Query authentication-related data for accounts on a Cosmos SDK chain, including account information, parameters, and address lookups.
+#### Agentic access (1)
 
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/auth](https://docs.cosmos.network/sdk/latest/modules/auth)
-- **Base URL:** `https://lcd.cosmos.network`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Cosmos Agentic Access](https://apis.io/agentic-access/cosmos/cosmos-agentic-access/)
 
-- Auth
-- Accounts
-- Authentication
+#### JSON Schema (58)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/auth)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Cosmos SDK cosmos.auth.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-auth-v1beta1/)
+- [Cosmos SDK cosmos.authz.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-authz-v1beta1/)
+- [Cosmos SDK cosmos.bank.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-bank-v1beta1/)
+- [Cosmos SDK cosmos.base.abci Schemas](https://apis.io/schemas/cosmos/cosmos-base-abci/)
+- [Cosmos SDK cosmos.base.node Schemas](https://apis.io/schemas/cosmos/cosmos-base-node/)
+- [Cosmos SDK cosmos.base.query Schemas](https://apis.io/schemas/cosmos/cosmos-base-query/)
+- [Cosmos SDK cosmos.base.tendermint Schemas](https://apis.io/schemas/cosmos/cosmos-base-tendermint/)
+- [Cosmos SDK cosmos.base.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-base-v1beta1/)
+- [Cosmos SDK cosmos.consensus.v1 Schemas](https://apis.io/schemas/cosmos/cosmos-consensus-v1/)
+- [Cosmos SDK cosmos.crypto.multisig Schemas](https://apis.io/schemas/cosmos/cosmos-crypto-multisig/)
+- [Cosmos SDK cosmos.distribution.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-distribution-v1beta1/)
+- [Cosmos SDK cosmos.epochs.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-epochs-v1beta1/)
+- [Cosmos SDK cosmos.evidence.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-evidence-v1beta1/)
+- [Cosmos SDK cosmos.feegrant.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-feegrant-v1beta1/)
+- [Cosmos SDK cosmos.gov.v1 Schemas](https://apis.io/schemas/cosmos/cosmos-gov-v1/)
+- [Cosmos SDK cosmos.gov.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-gov-v1beta1/)
+- [Cosmos SDK cosmos.mint.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-mint-v1beta1/)
+- [Cosmos SDK cosmos.slashing.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-slashing-v1beta1/)
+- [Cosmos SDK cosmos.staking.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-staking-v1beta1/)
+- [Cosmos SDK cosmos.tx.signing Schemas](https://apis.io/schemas/cosmos/cosmos-tx-signing/)
+- [Cosmos SDK cosmos.tx.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-tx-v1beta1/)
+- [Cosmos SDK cosmos.upgrade.v1beta1 Schemas](https://apis.io/schemas/cosmos/cosmos-upgrade-v1beta1/)
+- [Cosmos SDK google.protobuf.Any Schemas](https://apis.io/schemas/cosmos/google-protobuf-Any/)
+- [Cosmos SDK google.rpc.Status Schemas](https://apis.io/schemas/cosmos/google-rpc-Status/)
+- [Cosmos SDK tendermint.abci.Event Schemas](https://apis.io/schemas/cosmos/tendermint-abci-Event/)
+- …and 33 more published on APIs.io
 
-### Cosmos Bank API
+#### JSON-LD (2)
 
-Query account balances, total coin supply, denomination metadata, and denom ownership across a Cosmos SDK chain. Supports both individual balance lookups and aggregate supply queries.
+Linked-data contexts for the provider's vocabulary.
 
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/bank](https://docs.cosmos.network/sdk/latest/modules/bank)
-- **Base URL:** `https://lcd.cosmos.network`
+- [Api Context](https://apis.io/jsonld/cosmos/api/)
+- [context Context](https://apis.io/jsonld/cosmos/context/)
 
-#### Tags
+#### Examples (17)
 
-- Bank
-- Balances
-- Token Supply
-- Denominations
+Example requests and responses.
 
-#### Properties
+- [Cosmos Auth V1Beta1](https://apis.io/examples/cosmos/cosmos-auth-v1beta1/)
+- [Cosmos Authz V1Beta1](https://apis.io/examples/cosmos/cosmos-authz-v1beta1/)
+- [Cosmos Bank V1Beta1](https://apis.io/examples/cosmos/cosmos-bank-v1beta1/)
+- [Cosmos Base Node](https://apis.io/examples/cosmos/cosmos-base-node/)
+- [Cosmos Base Tendermint](https://apis.io/examples/cosmos/cosmos-base-tendermint/)
+- [Cosmos Consensus V1](https://apis.io/examples/cosmos/cosmos-consensus-v1/)
+- [Cosmos Distribution V1Beta1](https://apis.io/examples/cosmos/cosmos-distribution-v1beta1/)
+- [Cosmos Epochs V1Beta1](https://apis.io/examples/cosmos/cosmos-epochs-v1beta1/)
+- [Cosmos Evidence V1Beta1](https://apis.io/examples/cosmos/cosmos-evidence-v1beta1/)
+- [Cosmos Feegrant V1Beta1](https://apis.io/examples/cosmos/cosmos-feegrant-v1beta1/)
+- [Cosmos Gov V1](https://apis.io/examples/cosmos/cosmos-gov-v1/)
+- [Cosmos Gov V1Beta1](https://apis.io/examples/cosmos/cosmos-gov-v1beta1/)
+- [Cosmos Mint V1Beta1](https://apis.io/examples/cosmos/cosmos-mint-v1beta1/)
+- [Cosmos Slashing V1Beta1](https://apis.io/examples/cosmos/cosmos-slashing-v1beta1/)
+- [Cosmos Staking V1Beta1](https://apis.io/examples/cosmos/cosmos-staking-v1beta1/)
+- [Cosmos Tx V1Beta1](https://apis.io/examples/cosmos/cosmos-tx-v1beta1/)
+- [Cosmos Upgrade V1Beta1](https://apis.io/examples/cosmos/cosmos-upgrade-v1beta1/)
 
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/bank)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+#### Collections (2)
 
-### Cosmos Staking API
+Postman and Open Collection request collections.
 
-Query proof-of-stake data including validators, delegations, unbonding delegations, redelegations, staking parameters, and pool information. Supports querying by delegator address, validator address, and more.
+- [Cosmos SDK - gRPC Gateway docs Query API](https://apis.io/collections/cosmos/open-cosmos-query-api/)
+- [Cosmos SDK - gRPC Gateway docs Query Service API](https://apis.io/collections/cosmos/open-cosmos-service-api/)
 
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/staking](https://docs.cosmos.network/sdk/latest/modules/staking)
-- **Base URL:** `https://lcd.cosmos.network`
+#### Governance rules (1)
 
-#### Tags
+Spectral rulesets for the provider's contracts.
 
-- Staking
-- Validators
-- Delegations
-- Proof of Stake
+- [Cosmos — jsonschema rules](https://apis.io/rules/cosmos/cosmos-jsonschema-spectral-rules/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/staking)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Cosmos Governance API
+- [Cosmos Domain Security](https://apis.io/security/cosmos/cosmos-domain-security/)
 
-Query on-chain governance data including proposals, votes, deposits, and governance parameters. Supports filtering proposals by status and querying individual voter and depositor records.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/gov](https://docs.cosmos.network/sdk/latest/modules/gov)
-- **Base URL:** `https://lcd.cosmos.network`
+Published plans, tiers and prices.
 
-#### Tags
+- [Plans](https://apis.io/plans/cosmos/plans/)
 
-- Governance
-- Proposals
-- Voting
-- Deposits
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/gov)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Rate Limits](https://apis.io/rate-limits/cosmos/rate-limits/)
 
-### Cosmos Distribution API
+#### FinOps (1)
 
-Query staking reward distribution data including delegator rewards, validator commission, community pool balances, and distribution parameters.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/distribution](https://docs.cosmos.network/sdk/latest/modules/distribution)
-- **Base URL:** `https://lcd.cosmos.network`
+- [Finops](https://apis.io/finops/cosmos/finops/)
 
-#### Tags
+## Where to find this API
 
-- Distribution
-- Rewards
-- Commission
-- Community Pool
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/distribution)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-### Cosmos Mint API
-
-Query the minting module for inflation parameters, current inflation rate, annual provisions, and minting module parameters for a Cosmos SDK chain.
-
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/mint](https://docs.cosmos.network/sdk/latest/modules/mint)
-- **Base URL:** `https://lcd.cosmos.network`
-
-#### Tags
-
-- Mint
-- Inflation
-- Token Economics
-
-#### Properties
-
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/mint)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-### Cosmos Slashing API
-
-Query validator slashing data including signing information, slashing parameters, and signing info for all validators. Used for monitoring validator uptime and penalty state.
-
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/modules/slashing](https://docs.cosmos.network/sdk/latest/modules/slashing)
-- **Base URL:** `https://lcd.cosmos.network`
-
-#### Tags
-
-- Slashing
-- Validators
-- Signing Info
-- Penalties
-
-#### Properties
-
-- [Documentation](https://docs.cosmos.network/sdk/latest/modules/slashing)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-### Cosmos IBC API
-
-Query Inter-Blockchain Communication (IBC) data including channels, clients, connections, and packet commitments. Enables cross-chain transfer queries and IBC state inspection across all 150+ chains in the Cosmos ecosystem.
-
-- **Human URL:** [https://ibc.cosmos.network/v10/](https://ibc.cosmos.network/v10/)
-- **Base URL:** `https://lcd.cosmos.network`
-
-#### Tags
-
-- IBC
-- Inter-Blockchain Communication
-- Channels
-- Clients
-- Connections
-
-#### Properties
-
-- [Documentation](https://ibc.cosmos.network/v10/)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-### Cosmos Transactions API
-
-Query and broadcast transactions on a Cosmos SDK chain. Supports fetching transaction details by hash, searching transactions by event filters, simulating transaction gas, and broadcasting signed transactions.
-
-- **Human URL:** [https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest](https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest)
-- **Base URL:** `https://lcd.cosmos.network`
-
-#### Tags
-
-- Transactions
-- Broadcast
-- Gas Simulation
-- Transaction Search
-
-#### Properties
-
-- [Documentation](https://docs.cosmos.network/sdk/latest/learn/advanced/grpc_rest)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-### Cosmos CometBFT RPC API
-
-Query CometBFT (formerly Tendermint) consensus engine data including block information, validator sets, consensus state, network status, and ABCI application data. Exposed on port 26657 independent of the Cosmos SDK LCD.
-
-- **Human URL:** [https://docs.cosmos.network/cometbft/latest/docs/README](https://docs.cosmos.network/cometbft/latest/docs/README)
-- **Base URL:** `https://rpc.cosmos.network`
-
-#### Tags
-
-- CometBFT
-- Tendermint
-- Consensus
-- Blocks
-- ABCI
-
-#### Properties
-
-- [Documentation](https://docs.cosmos.network/cometbft/latest/docs/README)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/cosmos)
-- [GitHub Repository](https://github.com/cosmos/cosmos-sdk)
+- [Website](https://cosmos.network)
 - [Documentation](https://docs.cosmos.network)
-- [OpenAPI](https://cosmos.github.io/cosmos-sdk/openapi.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Swagger U I](https://localhost:1317/swagger)
-- [Forum](https://forum.cosmos.network)
-- [Discord](https://discord.gg/interchain)
-- [Blog](https://blog.cosmos.network)
-- [X (Twitter)](https://x.com/cosmosecosystem)
-- [Terms of Service](https://cosmos.network/privacy)
-- [Plans](https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/plans/plans.yml)
-- [Rate Limits](https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/rate-limits/rate-limits.yml)
-- [Fin Ops](https://raw.githubusercontent.com/api-evangelist/cosmos/refs/heads/main/finops/finops.yml)
+- [Blog](https://cosmos.network/blog)
+- [Terms of service](https://cosmos.network/privacy)
+- [GitHub](https://github.com/cosmos)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 40.9 |
+| Contract governance | 9.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 15.5 |
+| Access clarity | 18.4 |
+
+**Agent readiness 22.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 14.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cosmos/](https://apis.io/providers/cosmos/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cosmos: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cosmos/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
